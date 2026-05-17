@@ -219,9 +219,86 @@ a { color:inherit; text-decoration:none }
   .course-banner { padding:9px 20px }
   .sc-form-row { grid-template-columns:1fr }
 }
+
+/* ── PASSWORD GATE ── */
+#pw-gate {
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;
+  background:#1A2A41;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Old Standard TT',serif;
+}
+#pw-gate.hidden { display:none; }
+.pw-box {
+  background:white;border-radius:8px;padding:48px 40px;
+  max-width:440px;width:90%;text-align:center;
+  box-shadow:0 8px 40px rgba(0,0,0,.3);
+}
+.pw-logo-wrap {
+  background:#1A2A41;border-radius:5px;padding:6px 14px;
+  display:inline-flex;align-items:center;height:48px;margin-bottom:24px;
+}
+.pw-logo-wrap img { height:36px;width:auto; }
+.pw-title {
+  font-family:Merriweather,serif;font-size:22px;font-weight:900;
+  color:#1A2A41;margin-bottom:8px;line-height:1.3;
+}
+.pw-subtitle {
+  font-size:14px;color:#666;margin-bottom:28px;line-height:1.6;
+}
+.pw-input {
+  width:100%;padding:13px 16px;border:2px solid #C8D4DE;
+  border-radius:5px;font-family:'Old Standard TT',serif;
+  font-size:15px;color:#1A2A41;outline:none;
+  transition:border-color .2s;margin-bottom:12px;
+  text-align:center;letter-spacing:1px;
+}
+.pw-input:focus { border-color:#1A2A41; }
+.pw-input.error { border-color:#C0392B;background:#FFF5F5; }
+.pw-btn {
+  width:100%;background:#1A2A41;color:white;padding:14px;
+  border-radius:5px;font-family:Nunito,sans-serif;font-size:14px;
+  font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  border:none;cursor:pointer;transition:background .2s;margin-bottom:10px;
+}
+.pw-btn:hover { background:#253a55; }
+.pw-error {
+  color:#C0392B;font-size:13px;font-family:Nunito,sans-serif;
+  margin-bottom:10px;display:none;
+}
+.pw-error.show { display:block; }
+.pw-help {
+  font-size:12px;color:#999;margin-top:16px;line-height:1.6;
+}
+.pw-help a { color:#D4882A; }
+.pw-divider { width:48px;height:3px;background:#D4882A;border-radius:2px;margin:0 auto 20px; }
+
 </style>
 </head>
 <body>
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <div class="pw-box">
+    <div class="pw-logo-wrap">
+      <img src="https://img1.wsimg.com/isteam/ip/4ad5b401-b53c-4211-806e-caa3bae99774/blob-41a7f20.png/:/rs=w:400,h:400,cg:true,m/cr=w:400,h:400/qt=q:95" alt="Wayport Consulting">
+    </div>
+    <h2 class="pw-title">Building an Unshakeable Organization</h2>
+    <div class="pw-divider"></div>
+    <p class="pw-subtitle">Enter your access password to begin the course.</p>
+    <input type="password" id="pw-input" class="pw-input"
+      placeholder="Enter password"
+      onkeydown="if(event.key==='Enter')checkPW()"
+      oninput="document.getElementById('pw-input').classList.remove('error');document.getElementById('pw-err').classList.remove('show')">
+    <div id="pw-err" class="pw-error">Incorrect password. Check your access email and try again.</div>
+    <button class="pw-btn" onclick="checkPW()">Access Course &rarr;</button>
+    <p class="pw-help">
+      Don&rsquo;t have a password?
+      <a href="https://payhip.com/b/FB3Qd" target="_blank">Enroll here</a>
+      or email <a href="mailto:david@wayportconsulting.com">david@wayportconsulting.com</a>
+    </p>
+  </div>
+</div>
+<!-- END PASSWORD GATE -->
+
 <header class="wc-header">
   <nav class="wc-header-nav">
     <a href="https://wayportconsulting.com">Home</a>
@@ -1795,6 +1872,39 @@ if (lastLesson) {
 } else {
   showWelcome();
 }
+
+/* ── PASSWORD GATE ── */
+const COURSE_PW = 'UnbreakableOrgWayport';
+
+function checkPW() {
+  const input = document.getElementById('pw-input');
+  const err   = document.getElementById('pw-err');
+  const gate  = document.getElementById('pw-gate');
+  if (input.value.trim() === COURSE_PW) {
+    gate.classList.add('hidden');
+    sessionStorage.setItem('wc_access', '1');
+    // Focus first interactive element
+    setTimeout(() => document.querySelector('.start-btn') && document.querySelector('.start-btn').focus(), 100);
+  } else {
+    input.classList.add('error');
+    err.classList.add('show');
+    input.focus();
+    input.select();
+  }
+}
+
+// Auto-unlock if already authenticated this session
+if (sessionStorage.getItem('wc_access') === '1') {
+  const gate = document.getElementById('pw-gate');
+  if (gate) gate.classList.add('hidden');
+} else {
+  // Focus password input on load
+  window.addEventListener('load', () => {
+    const inp = document.getElementById('pw-input');
+    if (inp) inp.focus();
+  });
+}
+
 </script>
 </body>
 </html>
