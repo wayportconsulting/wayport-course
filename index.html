@@ -19,7 +19,7 @@ a { color:inherit; text-decoration:none }
 .wc-header { background:#FFFFFF; padding:14px 40px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #EEF2F6; position:sticky; top:0; z-index:1000; box-shadow:0 1px 8px rgba(26,42,65,.08) }
 .wc-header-nav { display:flex; align-items:center; gap:24px }
 .wc-header-nav a { font-family:'Old Standard TT', serif; font-size:14px; color:#1A2A41; text-decoration:none }
-.wc-header-logo-wrap { position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center }
+.wc-header-logo-wrap { position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center; z-index:1 }
 .wc-header-logo-wrap img { height:52px; width:auto }
 .wc-header-cta { background:#1A2A41; color:#F6F6F6; font-family:'Old Standard TT', serif; font-size:13px; font-weight:700; padding:8px 28px; border-radius:4px; text-transform:uppercase; letter-spacing:1px; white-space:nowrap }
 
@@ -29,12 +29,12 @@ a { color:inherit; text-decoration:none }
 .banner-right { display:flex; align-items:center; gap:16px }
 .banner-prog-wrap { display:flex; align-items:center; gap:10px }
 .banner-prog-bar { width:120px; height:4px; background:rgba(255,255,255,.2); border-radius:2px; overflow:hidden }
-.banner-prog-fill { height:100%; background:linear-gradient(90deg,#2E7D8C,#D4882A); border-radius:2px; transition:width .4s; width:0% }
+.banner-prog-fill { height:100%; background:linear-gradient(90deg,#1A2A41,#D4882A); border-radius:2px; transition:width .4s; width:0% }
 .banner-prog-pct { font-family:Nunito, sans-serif; font-size:11px; font-weight:700; color:#D4882A }
 .banner-enroll { font-family:Nunito, sans-serif; font-size:11px; font-weight:700; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:.5px }
 
 /* ── LAYOUT ── */
-.course-layout { display:flex; min-height:calc(100vh - 118px) }
+.course-layout { display:flex; min-height:calc(100vh - 118px); position:relative }
 
 /* ── SIDEBAR ── */
 .course-sidebar { width:270px; flex-shrink:0; background:#1A2A41; position:sticky; top:118px; height:calc(100vh - 118px); overflow-y:auto; display:flex; flex-direction:column }
@@ -45,14 +45,14 @@ a { color:inherit; text-decoration:none }
 .sidebar-progress-label { display:flex; justify-content:space-between; font-family:Nunito, sans-serif; font-size:10px; font-weight:700; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:1px; margin-bottom:7px }
 #sb_pct { color:#D4882A }
 .sidebar-progress-bar { height:3px; background:rgba(255,255,255,.15); border-radius:2px; overflow:hidden }
-.sidebar-progress-fill { height:100%; background:linear-gradient(90deg,#2E7D8C,#D4882A); border-radius:2px; transition:width .4s; width:0% }
+.sidebar-progress-fill { height:100%; background:linear-gradient(90deg,#1A2A41,#D4882A); border-radius:2px; transition:width .4s; width:0% }
 .sidebar-nav { flex:1; padding:8px 0 }
 .sb-module { border-bottom:1px solid rgba(255,255,255,.06) }
 .sb-module-header { display:flex; align-items:center; gap:8px; padding:10px 18px; cursor:pointer; transition:background .15s }
 .sb-module-header:hover { background:rgba(255,255,255,.06) }
 .sb-mod-num { width:24px; height:24px; border-radius:3px; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; font-family:Nunito, sans-serif; font-size:10px; font-weight:700; color:rgba(255,255,255,.5); flex-shrink:0; transition:all .2s }
 .sb-module.active .sb-mod-num { background:#D4882A; color:white }
-.sb-module.done .sb-mod-num { background:#2E7D8C; color:white }
+.sb-module.done .sb-mod-num { background:#1A2A41; color:white }
 .sb-mod-title { font-family:Nunito, sans-serif; font-size:11px; font-weight:600; color:rgba(255,255,255,.65); flex:1; line-height:1.35 }
 .sb-module.active .sb-mod-title { color:rgba(255,255,255,.92) }
 .sb-chevron { font-size:16px; color:rgba(255,255,255,.3); transition:transform .2s }
@@ -64,13 +64,13 @@ a { color:inherit; text-decoration:none }
 .sb-lesson.active { color:#D4882A; font-weight:700; background:rgba(255,255,255,.05) }
 .sb-lesson.done { color:rgba(255,255,255,.55) }
 .sb-check { width:13px; height:13px; border-radius:50%; border:1.5px solid rgba(255,255,255,.2); flex-shrink:0; transition:all .2s }
-.sb-lesson.done .sb-check { background:#2E7D8C; border-color:#2E7D8C }
+.sb-lesson.done .sb-check { background:#1A2A41; border-color:#1A2A41 }
 .sb-lesson.active .sb-check { border-color:#D4882A }
 .sidebar-footer { padding:14px 18px; border-top:1px solid rgba(255,255,255,.08) }
 .sidebar-tagline { font-family:'Old Standard TT', serif; font-size:10px; font-style:italic; color:rgba(255,255,255,.3) }
 
 /* ── MAIN ── */
-.course-main { flex:1; padding:40px 52px; background:#FFFFFF; max-width:820px; min-height:calc(100vh - 118px) }
+.course-main { flex:1; padding:40px 52px; background:#FFFFFF; max-width:820px; min-height:calc(100vh - 118px); overflow-x:hidden; word-wrap:break-word }
 
 /* ── WELCOME ── */
 .welcome-screen { padding:20px 0 40px }
@@ -94,7 +94,7 @@ a { color:inherit; text-decoration:none }
 .lesson-wrapper { display:none }
 .lesson-wrapper.active { display:block }
 .lesson { padding:0 }
-.lesson-module-label { font-family:Nunito, sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#2E7D8C; margin-bottom:8px }
+.lesson-module-label { font-family:Nunito, sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1A2A41; margin-bottom:8px }
 .lesson-title { font-family:Merriweather, serif; font-size:clamp(20px,2.8vw,30px); font-weight:900; color:#1A2A41; line-height:1.2; margin-bottom:12px }
 .lesson-meta { display:flex; gap:16px; font-family:Nunito, sans-serif; font-size:12px; color:#C8D4DE; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #EEF2F6 }
 .lesson-body { font-family:'Old Standard TT', serif; font-size:15px; color:#1E2D3D; line-height:1.78 }
@@ -209,8 +209,7 @@ a { color:inherit; text-decoration:none }
 .mobile-drawer { display:none; position:fixed; top:0; left:0; bottom:0; width:270px; z-index:400; background:#1A2A41; overflow-y:auto; transform:translateX(-100%); transition:transform .3s ease; box-shadow:4px 0 20px rgba(26,42,65,.2) }
 .mobile-drawer.open { transform:translateX(0) }
 .mobile-close { position:absolute; top:14px; right:14px; background:none; border:none; color:rgba(255,255,255,.5); font-size:22px; cursor:pointer }
-@media(max-width:900px) {
-  .course-sidebar { display:none }
+
   .mobile-toggle { display:flex; align-items:center; justify-content:center }
   .mobile-drawer { display:block }
   .course-main { padding:24px 18px }
@@ -272,38 +271,708 @@ a { color:inherit; text-decoration:none }
 .pw-help a { color:#D4882A; }
 .pw-divider { width:48px;height:3px;background:#D4882A;border-radius:2px;margin:0 auto 20px; }
 
+
+/* ── REVIEW FORM ── */
+.review-section {
+  margin-top: 48px;
+  background: #F7F9FB;
+  border: 1px solid #EEF2F6;
+  border-top: 3px solid #D4882A;
+  border-radius: 0 0 8px 8px;
+  padding: 32px;
+}
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.review-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #D4882A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.review-title {
+  font-family: Merriweather, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A2A41;
+}
+.review-subtitle {
+  font-family: Nunito, sans-serif;
+  font-size: 13px;
+  color: #3A4A5A;
+  margin-top: 3px;
+}
+.star-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.star {
+  font-size: 28px;
+  cursor: pointer;
+  color: #C8D4DE;
+  transition: color .15s;
+  line-height: 1;
+}
+.star.active { color: #D4882A; }
+.review-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+ }
+.review-input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #C8D4DE;
+  border-radius: 5px;
+  font-family: 'Old Standard TT', serif;
+  font-size: 13px;
+  color: #1E2D3D;
+  background: white;
+  outline: none;
+  transition: border-color .2s;
+}
+.review-input:focus { border-color: #1A2A41; }
+.review-textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #C8D4DE;
+  border-radius: 5px;
+  font-family: 'Old Standard TT', serif;
+  font-size: 13px;
+  color: #1E2D3D;
+  background: white;
+  min-height: 80px;
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.review-textarea:focus { border-color: #1A2A41; }
+.review-prompt {
+  font-family: Nunito, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1A2A41;
+  margin-bottom: 6px;
+}
+.review-permission {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0 18px;
+  font-family: 'Old Standard TT', serif;
+  font-size: 13px;
+  color: #3A4A5A;
+  line-height: 1.55;
+}
+.review-permission input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #D4882A;
+}
+.review-submit-btn {
+  background: #1A2A41;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-family: Nunito, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s;
+  margin-right: 10px;
+}
+.review-submit-btn:hover { background: #253a55; }
+.review-submit-btn:disabled { background: #C8D4DE; cursor: not-allowed; }
+.review-success {
+  display: none;
+  background: rgba(39,174,96,.1);
+  border: 1px solid #27AE60;
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-family: 'Old Standard TT', serif;
+  font-size: 14px;
+  color: #1A2A41;
+  line-height: 1.65;
+  margin-top: 14px;
+}
+.review-success.show { display: block; }
+
+
+/* ── PRE-COURSE REFLECTION ── */
+.precourse-screen { padding: 20px 0 40px }
+.precourse-badge {
+  display:inline-block; background:#D4882A; color:white;
+  font-family:Nunito,sans-serif; font-size:10px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase; padding:5px 14px;
+  border-radius:3px; margin-bottom:16px;
+}
+.precourse-title {
+  font-family:Merriweather,serif; font-size:clamp(22px,3vw,32px);
+  font-weight:900; color:#1A2A41; line-height:1.2; margin-bottom:10px;
+}
+.precourse-subtitle {
+  font-family:'Old Standard TT',serif; font-size:15px; color:#3A4A5A;
+  line-height:1.72; max-width:540px; margin-bottom:28px;
+}
+.precourse-box {
+  background:#F7F9FB; border:1px solid #EEF2F6; border-top:3px solid #1A2A41;
+  border-radius:0 0 8px 8px; padding:28px; margin-bottom:28px;
+}
+.precourse-prompt {
+  font-family:Nunito,sans-serif; font-size:13px; font-weight:700;
+  color:#1A2A41; margin-bottom:6px;
+}
+.precourse-textarea {
+  width:100%; padding:11px 13px; border:1.5px solid #C8D4DE; border-radius:5px;
+  font-family:'Old Standard TT',serif; font-size:13px; color:#1E2D3D;
+  background:white; min-height:80px; resize:vertical; outline:none;
+  transition:border-color .2s; margin-bottom:16px; line-height:1.6;
+}
+.precourse-textarea:focus { border-color:#1A2A41; }
+.precourse-btn {
+  background:#1A2A41; color:white; padding:13px 28px; border-radius:5px;
+  font-family:Nunito,sans-serif; font-size:14px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.5px; border:none; cursor:pointer;
+  transition:background .2s;
+}
+.precourse-btn:hover { background:#253a55; }
+.precourse-note {
+  font-family:'Old Standard TT',serif; font-size:12px; color:#888;
+  margin-top:12px; line-height:1.6; font-style:italic;
+}
+
+/* ── MODULE CELEBRATION ── */
+.module-celebration {
+  position:fixed; top:0; left:0; right:0; bottom:0; z-index:500;
+  background:rgba(26,42,65,.92); display:flex; align-items:center;
+  justify-content:center; opacity:0; pointer-events:none;
+  transition:opacity .3s ease;
+}
+.module-celebration.show { opacity:1; pointer-events:all; }
+.celebration-box {
+  background:white; border-radius:10px; padding:44px 40px;
+  max-width:420px; width:90%; text-align:center;
+  border-top:4px solid #D4882A;
+  animation:celebrationPop .4s ease;
+  box-sizing:border-box;
+}
+@keyframes celebrationPop {
+  0%   { transform:scale(.85); opacity:0; }
+  70%  { transform:scale(1.03); }
+  100% { transform:scale(1); opacity:1; }
+}
+.celebration-emoji { font-size:52px; margin-bottom:14px; display:block; }
+.celebration-title {
+  font-family:Merriweather,serif; font-size:22px; font-weight:900;
+  color:#1A2A41; margin-bottom:8px;
+}
+.celebration-divider {
+  width:48px; height:3px; background:#D4882A; border-radius:2px;
+  margin:10px auto 16px;
+}
+.celebration-msg {
+  font-family:'Old Standard TT',serif; font-size:14px; color:#3A4A5A;
+  line-height:1.7; margin-bottom:24px;
+}
+.celebration-next-btn {
+  background:#1A2A41; color:white; padding:12px 24px; border-radius:5px;
+  font-family:Nunito,sans-serif; font-size:13px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.5px; border:none;
+  cursor:pointer; transition:background .2s; margin-right:8px;
+}
+.celebration-next-btn:hover { background:#253a55; }
+.celebration-close-btn {
+  background:#F7F9FB; color:#1A2A41; padding:12px 20px; border-radius:5px;
+  font-family:Nunito,sans-serif; font-size:13px; font-weight:600;
+  border:1px solid #EEF2F6; cursor:pointer; transition:background .2s;
+}
+.celebration-close-btn:hover { background:#EEF2F6; }
+
+
+/* ── PACE GUIDE ── */
+.pace-guide-section {
+  background: #F7F9FB;
+  border: 1px solid #EEF2F6;
+  border-left: 4px solid #1A2A41;
+  border-radius: 0 8px 8px 0;
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.pace-guide-label {
+  font-family: Nunito, sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #1A2A41; margin-bottom: 12px;
+}
+.pace-guide-title {
+  font-family: Merriweather, serif;
+  font-size: 17px; font-weight: 700;
+  color: #1A2A41; margin-bottom: 16px;
+}
+.pace-week {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid #EEF2F6;
+}
+.pace-week:last-child { border-bottom: none; }
+.pace-week-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #1A2A41;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Merriweather, serif; font-size: 12px;
+  font-weight: 900; color: #D4882A; flex-shrink: 0;
+}
+.pace-week-content { flex: 1; }
+.pace-week-title {
+  font-family: Nunito, sans-serif; font-size: 13px;
+  font-weight: 700; color: #1A2A41; margin-bottom: 3px;
+}
+.pace-week-desc {
+  font-family: 'Old Standard TT', serif;
+  font-size: 13px; color: #3A4A5A; line-height: 1.55;
+}
+.pace-week-time {
+  font-family: Nunito, sans-serif; font-size: 10px;
+  font-weight: 700; color: #888; text-transform: uppercase;
+  letter-spacing: .5px; white-space: nowrap; margin-top: 2px;
+}
+
+/* ── GRADUATE OFFER ── */
+.graduate-offer {
+  background: #1A2A41;
+  border-radius: 10px;
+  padding: 36px;
+  margin: 40px 0 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.graduate-offer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #D4882A, #E8A040);
+}
+.graduate-offer-badge {
+  display: inline-block;
+  background: rgba(212,136,42,.2);
+  border: 1px solid rgba(212,136,42,.4);
+  border-radius: 3px;
+  padding: 4px 14px;
+  font-family: Nunito, sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #D4882A; margin-bottom: 14px;
+}
+.graduate-offer-title {
+  font-family: Merriweather, serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 900; color: white;
+  line-height: 1.25; margin-bottom: 10px;
+}
+.graduate-offer-divider {
+  width: 48px; height: 3px; background: #D4882A;
+  border-radius: 2px; margin: 12px auto 16px;
+}
+.graduate-offer-subtitle {
+  font-family: 'Old Standard TT', serif;
+  font-size: 15px; color: rgba(255,255,255,.72);
+  line-height: 1.7; max-width: 520px;
+  margin: 0 auto 28px;
+}
+.graduate-offer-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px; margin-bottom: 28px;
+  text-align: left;
+}
+.offer-tier {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-top: 2px solid #D4882A;
+  border-radius: 5px; padding: 18px;
+}
+.offer-tier-discount {
+  font-family: Merriweather, serif;
+  font-size: 22px; font-weight: 900;
+  color: #D4882A; margin-bottom: 4px;
+}
+.offer-tier-name {
+  font-family: Nunito, sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: white; margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.offer-tier-desc {
+  font-family: 'Old Standard TT', serif;
+  font-size: 12px; color: rgba(255,255,255,.6);
+  line-height: 1.55;
+}
+.graduate-offer-expiry {
+  font-family: 'Old Standard TT', serif;
+  font-size: 12px; color: rgba(255,255,255,.4);
+  margin-bottom: 20px; font-style: italic;
+}
+.graduate-offer-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #D4882A; color: white;
+  padding: 14px 32px; border-radius: 5px;
+  font-family: Nunito, sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  text-decoration: none; transition: background .2s;
+}
+.graduate-offer-cta:hover { background: #E8A040; }
+.graduate-offer-note {
+  font-family: 'Old Standard TT', serif;
+  font-size: 12px; color: rgba(255,255,255,.3);
+  margin-top: 14px; font-style: italic;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE OVERRIDES, MOBILE & TABLET OPTIMIZATION
+   ════════════════════════════════════════════════════════ */
+
+/* ── LARGE DESKTOP (1200px+) ── */
+@media(min-width:1200px) {
+  .course-main { padding:48px 64px; }
+  .welcome-title { font-size:44px; }
+}
+
+/* ── STANDARD DESKTOP (901px–1199px) ── */
+@media(min-width:901px) and (max-width:1199px) {
+  .course-main { padding:36px 40px; }
+  .course-sidebar { width:240px; }
+}
+
+/* ── TABLET + MOBILE (max 900px) ── */
+@media(max-width:900px) {
+  /* Header */
+  .wc-header { padding:10px 16px; min-height:56px; }
+  .wc-header-nav { display:none; }
+  .wc-header-logo-wrap img { height:40px; }
+  .wc-header-cta { padding:7px 16px; font-size:12px; letter-spacing:.5px; }
+
+  /* Course banner */
+  .course-banner { padding:8px 16px; flex-wrap:wrap; gap:6px; }
+  .course-banner-title { font-size:11px; }
+  .banner-enroll { display:none; }
+  .banner-prog-bar { width:80px; }
+
+  /* Layout */
+  .course-layout { min-height:calc(100vh - 100px); }
+  .course-sidebar { display:none; }
+  .course-main { padding:20px 16px; max-width:100%; }
+
+  /* Mobile drawer */
+  .mobile-toggle { display:flex; align-items:center; justify-content:center; }
+  .mobile-drawer { display:block; }
+
+  /* Welcome screen */
+  .welcome-screen { padding:16px 0 32px; }
+  .welcome-title { font-size:clamp(22px,6vw,32px); }
+  .welcome-tagline { font-size:14px; }
+  .welcome-stats { max-width:100%; }
+  .wstat-num { font-size:20px; }
+  .wc-modules { max-width:100%; }
+  .start-btn { width:100%; text-align:center; padding:14px; font-size:13px; }
+
+  /* Pre-course screen */
+  .precourse-title { font-size:clamp(20px,5vw,28px); }
+  .precourse-subtitle { font-size:14px; }
+  .precourse-box { padding:20px; }
+  .precourse-btn { width:100%; text-align:center; }
+
+  /* Pace guide */
+  .pace-guide-section { padding:18px 16px; }
+  .pace-week { gap:10px; }
+  .pace-week-time { display:none; }
+  .pace-week-title { font-size:12px; }
+  .pace-week-desc { font-size:12px; }
+
+  /* Lesson */
+  .lesson-title { font-size:clamp(18px,5vw,26px); }
+  .lesson-body { font-size:14px; line-height:1.72; }
+  .lesson-body h3 { font-size:16px; }
+  .lesson-callout { padding:14px 16px; font-size:13px; }
+  .lesson-insight { padding:16px 18px; }
+
+  /* Lesson nav */
+  .lesson-nav { flex-direction:column; align-items:stretch; }
+  .nav-center { flex-direction:column; gap:8px; }
+  .nav-btn { width:100%; text-align:center; justify-content:center; padding:12px; }
+  .mark-done-btn { width:100%; text-align:center; }
+
+  /* Reflection */
+  .reflection-box { padding:18px 16px; }
+  .reflection-header { gap:10px; }
+  .reflection-title { font-size:15px; }
+  .ref-textarea { font-size:14px; min-height:100px; }
+
+  /* Action steps */
+  .action-box { padding:18px 16px; }
+  .action-text { font-size:13px; }
+
+  /* Scorecard */
+  .sc-intro h3 { font-size:16px; }
+  .sc-section-title { font-size:11px; }
+  .sc-q-text { font-size:12px; }
+  .sc-circle { width:30px; height:30px; font-size:11px; }
+  .sc-vlabel { font-size:7px; }
+  .sc-total-num { font-size:40px; }
+  .sc-email-form { padding:16px; }
+  .sc-form-row { grid-template-columns:1fr; }
+
+  /* Graduate offer */
+  .graduate-offer { padding:24px 18px; }
+  .graduate-offer-title { font-size:20px; }
+  .graduate-offer-subtitle { font-size:14px; }
+  .graduate-offer-tiers { grid-template-columns:1fr; }
+  .graduate-offer-cta { width:100%; text-align:center; justify-content:center; }
+
+  /* Review form */
+  .review-section { padding:20px 16px; }
+  .review-title { font-size:16px; }
+  .review-form-grid { grid-template-columns:1fr; }
+
+  /* Celebration */
+  .celebration-box { padding:32px 24px; margin:16px; }
+  .celebration-emoji { font-size:44px; }
+  .celebration-title { font-size:18px; }
+  .celebration-msg { font-size:13px; }
+  .celebration-next-btn { width:100%; margin-right:0; margin-bottom:8px; }
+  .celebration-close-btn { width:100%; }
+
+  /* Completion screen */
+  .completion-screen { padding:32px 8px; }
+  .completion-title { font-size:28px; }
+  .completion-subtitle { font-size:14px; }
+  .completion-actions { flex-direction:column; }
+  .comp-btn-primary { width:100%; text-align:center; }
+  .comp-btn-secondary { width:100%; text-align:center; }
+
+  /* Password gate */
+  .pw-box { padding:32px 20px; }
+  .pw-title { font-size:18px; }
+
+  /* Framework reference */
+  .lesson-insight { margin:16px 0; }
+
+  /* Footer */
+  .wc-footer { padding:28px 16px 20px; }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:20px; }
+  .footer-logo-wrap img { height:24px; }
+}
+
+/* ── SMALL MOBILE (max 480px) ── */
+@media(max-width:480px) {
+  /* Header even tighter */
+  .wc-header-logo-wrap img { height:34px; }
+  .wc-header-cta { padding:6px 12px; font-size:11px; }
+
+  /* Welcome stats single row scroll */
+  .welcome-stats { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .wstat { min-width:72px; }
+
+  /* Module cards */
+  .wc-mod-name { font-size:12px; }
+
+  /* Scorecard ratings wrap tighter */
+  .sc-ratings { gap:5px; }
+  .sc-circle { width:28px; height:28px; font-size:10px; }
+
+  /* Footer single column */
+  .footer-grid { grid-template-columns:1fr; }
+
+  /* Offer tiers */
+  .offer-tier-discount { font-size:18px; }
+  .offer-tier-name { font-size:11px; }
+
+  /* Pace guide */
+  .pace-week-num { width:26px; height:26px; font-size:10px; }
+}
+
+/* ── PC PRINT OPTIMIZATION ── */
+@media print {
+  .course-sidebar { display:none !important; }
+  .mobile-toggle { display:none !important; }
+  .wc-header { position:static; }
+  .course-main { max-width:100%; padding:20px; }
+  .lesson-nav { display:none; }
+  .mark-done-btn { display:none; }
+}
+
+
+/* ── TOUCH OPTIMIZATION ── */
+.sb-lesson, .sb-module-header, .mark-done-btn,
+.start-btn, .precourse-btn, .nav-btn,
+.sc-circle, .star, .action-check,
+.mobile-toggle, .mobile-close { -webkit-tap-highlight-color:transparent; }
+.sc-circle, .star, .action-check,
+.sb-lesson, .mobile-toggle { touch-action:manipulation; }
+input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on focus */
+
+
+/* ── MOBILE SPACING REDUCTION (max 900px) ── */
+@media(max-width:900px) {
+
+  /* Main content area */
+  .course-main { padding:14px 14px !important; }
+
+  /* Welcome screen */
+  .welcome-screen { padding:10px 0 20px !important; }
+  .welcome-title { margin-bottom:8px !important; }
+  .welcome-tagline { margin-bottom:14px !important; font-size:13px !important; }
+  .welcome-stats { margin-bottom:16px !important; }
+  .wc-modules { margin-bottom:16px !important; gap:5px !important; }
+  .wc-mod-card { padding:8px 12px !important; }
+  .start-btn { margin-top:4px !important; }
+
+  /* Save note bar */
+  .course-main > div[style*="background:#F7F9FB"] { padding:10px 12px !important; margin-bottom:14px !important; }
+
+  /* Pre-course screen */
+  .precourse-screen { padding:10px 0 20px !important; }
+  .precourse-subtitle { margin-bottom:14px !important; font-size:13px !important; }
+  .precourse-box { padding:16px !important; margin-bottom:16px !important; }
+  .precourse-textarea { min-height:70px !important; margin-bottom:10px !important; }
+
+  /* Pace guide */
+  .pace-guide-section { padding:14px 12px !important; margin:16px 0 !important; }
+  .pace-guide-title { margin-bottom:10px !important; font-size:15px !important; }
+  .pace-week { padding:8px 0 !important; gap:8px !important; }
+
+  /* Lesson */
+  .lesson-module-label { margin-bottom:4px !important; }
+  .lesson-title { margin-bottom:8px !important; }
+  .lesson-meta { margin-bottom:14px !important; padding-bottom:12px !important; }
+  .lesson-body { font-size:14px !important; }
+  .lesson-body p { margin-bottom:12px !important; }
+  .lesson-body h3 { margin:18px 0 8px !important; }
+  .lesson-callout { padding:12px 14px !important; margin:14px 0 !important; }
+  .lesson-insight { padding:14px 16px !important; margin:14px 0 !important; }
+
+  /* Reflection */
+  .reflection-box { padding:14px !important; margin:16px 0 !important; }
+  .reflection-header { margin-bottom:12px !important; }
+  .ref-prompt { margin-bottom:4px !important; }
+  .ref-textarea { min-height:70px !important; margin-bottom:10px !important; }
+
+  /* Action steps */
+  .action-box { padding:14px !important; margin:16px 0 !important; }
+  .action-header { margin-bottom:12px !important; }
+  .action-item { padding:8px 0 !important; }
+
+  /* Lesson nav */
+  .lesson-nav { margin-top:24px !important; padding-top:14px !important; }
+
+  /* Module summary callout */
+  div[style*="Module Summary"] { margin:16px 0 !important; }
+  div[style*="Course Summary"] { margin:16px 0 !important; }
+
+  /* Scorecard */
+  .sc-intro { margin:14px 0 8px !important; }
+  .sc-section { margin-bottom:8px !important; }
+  .sc-question { padding:8px 12px !important; gap:6px !important; }
+  .sc-total-box { padding:16px !important; margin-top:6px !important; }
+  .sc-total-num { font-size:36px !important; }
+  .sc-email-form { padding:14px !important; margin-top:8px !important; }
+  .sc-email-intro { margin-bottom:10px !important; }
+
+  /* Password gate */
+  .pw-box { padding:24px 18px !important; }
+  .pw-title { font-size:17px !important; margin-bottom:6px !important; }
+  .pw-subtitle { margin-bottom:16px !important; font-size:13px !important; }
+  .pw-logo-wrap { height:40px !important; margin-bottom:16px !important; }
+  .pw-logo-wrap img { height:30px !important; }
+
+  /* Celebration */
+  .celebration-box { padding:24px 18px !important; }
+  .celebration-emoji { font-size:36px !important; margin-bottom:10px !important; }
+  .celebration-title { font-size:17px !important; }
+  .celebration-msg { font-size:13px !important; margin-bottom:16px !important; }
+
+  /* Completion screen */
+  .completion-screen { padding:24px 10px !important; }
+  .completion-icon { font-size:44px !important; margin-bottom:12px !important; }
+  .completion-title { font-size:24px !important; margin-bottom:6px !important; }
+  .completion-subtitle { font-size:13px !important; margin-bottom:20px !important; }
+  .completion-actions { margin-bottom:16px !important; }
+
+  /* Graduate offer */
+  .graduate-offer { padding:20px 14px !important; margin:24px 0 0 !important; }
+  .graduate-offer-title { font-size:18px !important; margin-bottom:6px !important; }
+  .graduate-offer-subtitle { font-size:13px !important; margin-bottom:16px !important; }
+  .graduate-offer-tiers { gap:8px !important; margin-bottom:16px !important; }
+  .offer-tier { padding:14px !important; }
+  .offer-tier-discount { font-size:18px !important; }
+
+  /* Review form */
+  .review-section { padding:16px !important; margin-top:24px !important; }
+  .review-header { margin-bottom:14px !important; }
+  .review-title { font-size:15px !important; }
+  .star-row { margin-bottom:14px !important; }
+  .star { font-size:24px !important; }
+  .review-form-grid { margin-bottom:10px !important; gap:8px !important; }
+  .review-textarea { min-height:70px !important; margin-bottom:8px !important; }
+  .review-permission { margin:10px 0 14px !important; }
+
+  /* Footer */
+  .wc-footer { padding:20px 14px 16px !important; }
+  .footer-grid { margin-bottom:16px !important; }
+  .footer-copy { padding-top:14px !important; font-size:10px !important; }
+
+  /* Header */
+  .wc-header { min-height:48px !important; }
+  .course-banner { padding:6px 14px !important; }
+}
+
+/* ── EXTRA SMALL MOBILE (max 480px) ── */
+@media(max-width:480px) {
+  .course-main { padding:10px 10px !important; }
+  .welcome-title { font-size:20px !important; }
+  .lesson-title { font-size:18px !important; }
+  .pw-box { padding:20px 14px !important; }
+  .completion-screen { padding:18px 8px !important; }
+  .graduate-offer { padding:16px 12px !important; }
+  .review-section { padding:14px !important; }
+  .celebration-box { padding:20px 14px !important; margin:10px !important; }
+}
+
+
+@media(max-width:900px) {
+  .mod-summary-box { padding:14px 16px !important; margin:14px 0 !important; }
+  .mod-summary-box p { font-size:13px !important; }
+}
+
 </style>
 </head>
 <body>
-<!-- PASSWORD GATE -->
-<div id="pw-gate">
-  <div class="pw-box">
-    <div class="pw-logo-wrap">
-      <img src="https://img1.wsimg.com/isteam/ip/4ad5b401-b53c-4211-806e-caa3bae99774/blob-41a7f20.png/:/rs=w:400,h:400,cg:true,m/cr=w:400,h:400/qt=q:95" alt="Wayport Consulting">
-    </div>
-    <h2 class="pw-title">Building an Unshakeable Organization</h2>
-    <div class="pw-divider"></div>
-    <p class="pw-subtitle">Enter your access password to begin the course.</p>
-    <input type="password" id="pw-input" class="pw-input"
-      placeholder="Enter password"
-      onkeydown="if(event.key==='Enter')checkPW()"
-      oninput="document.getElementById('pw-input').classList.remove('error');document.getElementById('pw-err').classList.remove('show')">
-    <div id="pw-err" class="pw-error">Incorrect password. Check your access email and try again.</div>
-    <button class="pw-btn" onclick="checkPW()">Access Course &rarr;</button>
-    <p class="pw-help">
-      Don&rsquo;t have a password?
-      <a href="https://payhip.com/b/FB3Qd" target="_blank">Enroll here</a>
-      or email <a href="mailto:david@wayportconsulting.com">david@wayportconsulting.com</a>
-    </p>
-  </div>
-</div>
-<!-- END PASSWORD GATE -->
+<!-- Password gate removed: access controlled by Cloudflare Access -->
 
 <header class="wc-header">
   <nav class="wc-header-nav">
     <a href="https://wayportconsulting.com">Home</a>
     <a href="https://wayportconsulting.com/about">About</a>
-    <a href="https://wayportconsulting.com/services">Services</a>
+    <a href="https://wayportconsulting.com/what-we-do">Services</a>
     <a href="https://wayportconsulting.com/blog">Blog</a>
   </nav>
   <a href="https://wayportconsulting.com" class="wc-header-logo-wrap">
@@ -318,7 +987,7 @@ a { color:inherit; text-decoration:none }
       <div class="banner-prog-bar"><div class="banner-prog-fill"></div></div>
       <span class="banner-prog-pct">0%</span>
     </div>
-    <a href="https://payhip.com/b/FB3Qd" target="_blank" class="banner-enroll">Enroll Others &rarr;</a>
+    <a href="https://buy.stripe.com/9B64gA9K3co9f7Abde0Jq00" target="_blank" class="banner-enroll">Enroll Others &rarr;</a>
   </div>
 </div>
 <div class="course-layout">
@@ -408,7 +1077,9 @@ a { color:inherit; text-decoration:none }
           </div><div class="sb-lesson" id="sblink_plan" onclick="showLesson('plan')">
             <div class="sb-check" id="sbchk_plan"></div>
             <span>Build Your 90-Day Plan</span>
-          </div></div></div></div><div class="sidebar-footer"><div class="sidebar-tagline">Clarity Changes Everything.</div></div>
+          </div></div></div></div><div class="sidebar-footer">
+    <button onclick="exportWorkPDF()" style="width:100%;background:rgba(212,136,42,.15);border:1px solid rgba(212,136,42,.35);color:#D4882A;padding:8px 12px;border-radius:4px;font-family:Nunito,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;margin-bottom:12px;transition:background .2s" onmouseover="this.style.background='rgba(212,136,42,.25)'" onmouseout="this.style.background='rgba(212,136,42,.15)'">&#8659; Download My Work (PDF)</button><a onclick="showFrameworks()" style="display:block;font-family:Nunito,sans-serif;font-size:10px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;cursor:pointer;margin-bottom:8px;text-decoration:none" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">&#128214; Framework Reference</a>
+    <div class="sidebar-tagline">Clarity Changes Everything.</div></div>
   </aside>
   <!-- MAIN CONTENT -->
   <main class="course-main">
@@ -422,8 +1093,54 @@ a { color:inherit; text-decoration:none }
         <div class="wstat"><span class="wstat-num">~4hrs</span><span class="wstat-label">Total Time</span></div>
         <div class="wstat"><span class="wstat-num">&#8734;</span><span class="wstat-label">Lifetime Access</span></div>
       </div>
-      <div class="wc-modules"><div class="wc-mod-card"><div class="wc-mod-num">00</div><div class="wc-mod-name">Start Here: Assess Your Organization</div></div><div class="wc-mod-card"><div class="wc-mod-num">01</div><div class="wc-mod-name">Module 1: Clarity & Direction</div></div><div class="wc-mod-card"><div class="wc-mod-num">02</div><div class="wc-mod-name">Module 2: Trust & Psychological Safety</div></div><div class="wc-mod-card"><div class="wc-mod-num">03</div><div class="wc-mod-name">Module 3: Culture & Values</div></div><div class="wc-mod-card"><div class="wc-mod-num">04</div><div class="wc-mod-name">Module 4: Engagement & Motivation</div></div><div class="wc-mod-card"><div class="wc-mod-num">05</div><div class="wc-mod-name">Module 5: Leadership Effectiveness</div></div><div class="wc-mod-card"><div class="wc-mod-num">06</div><div class="wc-mod-name">Module 6: Your 90-Day Action Plan</div></div></div>
-      <button onclick="showLesson('welcome')" class="start-btn">Start the Course &#8594;</button>
+      <div style="background:#F7F9FB;border:1px solid #EEF2F6;border-left:4px solid #1A2A41;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:24px;display:flex;align-items:flex-start;gap:12px">
+  <span style="font-size:18px;flex-shrink:0;margin-top:1px">&#128190;</span>
+  <div>
+    <div style="font-family:Nunito,sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1A2A41;margin-bottom:3px">Your Progress Is Saved Automatically</div>
+    <div style="font-family:'Old Standard TT',serif;font-size:13px;color:#3A4A5A;line-height:1.6">Your work is saved in this browser as you go. To continue on another device, use the <strong>Download My Work (PDF)</strong> button in the sidebar at any time. For automatic sync across devices, open this course in Chrome signed into your Google account, or Safari signed into your iCloud account.</div>
+  </div>
+</div>
+<div class="wc-modules"><div class="wc-mod-card"><div class="wc-mod-num">00</div><div class="wc-mod-name">Start Here: Assess Your Organization</div></div><div class="wc-mod-card"><div class="wc-mod-num">01</div><div class="wc-mod-name">Module 1: Clarity & Direction</div></div><div class="wc-mod-card"><div class="wc-mod-num">02</div><div class="wc-mod-name">Module 2: Trust & Psychological Safety</div></div><div class="wc-mod-card"><div class="wc-mod-num">03</div><div class="wc-mod-name">Module 3: Culture & Values</div></div><div class="wc-mod-card"><div class="wc-mod-num">04</div><div class="wc-mod-name">Module 4: Engagement & Motivation</div></div><div class="wc-mod-card"><div class="wc-mod-num">05</div><div class="wc-mod-name">Module 5: Leadership Effectiveness</div></div><div class="wc-mod-card"><div class="wc-mod-num">06</div><div class="wc-mod-name">Module 6: Your 90-Day Action Plan</div></div></div>
+      
+<div class="pace-guide-section">
+  <div class="pace-guide-label">&#128197; Recommended Pace</div>
+  <div class="pace-guide-title">Your Four-Week Course Schedule</div>
+  <div class="pace-week">
+    <div class="pace-week-num">1</div>
+    <div class="pace-week-content">
+      <div class="pace-week-title">Foundation: Assess & Orient</div>
+      <div class="pace-week-desc">Complete the pre-course reflection, Module 00 (Welcome + Team Health Scorecard), and Module 01 (Clarity & Direction). Write down your scorecard results and your top priority dimension before moving on.</div>
+    </div>
+    <div class="pace-week-time">~90 min</div>
+  </div>
+  <div class="pace-week">
+    <div class="pace-week-num">2</div>
+    <div class="pace-week-content">
+      <div class="pace-week-title">People: Trust & Culture</div>
+      <div class="pace-week-desc">Work through Module 02 (Trust & Psychological Safety) and Module 03 (Culture & Values). Complete all reflection prompts. Do at least one action step from each module before the week ends.</div>
+    </div>
+    <div class="pace-week-time">~60 min</div>
+  </div>
+  <div class="pace-week">
+    <div class="pace-week-num">3</div>
+    <div class="pace-week-content">
+      <div class="pace-week-title">Performance: Engagement & Leadership</div>
+      <div class="pace-week-desc">Work through Module 04 (Engagement & Motivation) and Module 05 (Leadership Effectiveness). These two modules together reveal the most about how your current leadership style is either enabling or limiting your team.</div>
+    </div>
+    <div class="pace-week-time">~60 min</div>
+  </div>
+  <div class="pace-week">
+    <div class="pace-week-num">4</div>
+    <div class="pace-week-content">
+      <div class="pace-week-title">Action: Build Your Plan</div>
+      <div class="pace-week-desc">Complete Module 06 (Your 90-Day Action Plan), finalize your plan, export your reflections, and share your experience in the course review. This is the most important week. Do not skip the 90-day plan.</div>
+    </div>
+    <div class="pace-week-time">~45 min</div>
+  </div>
+  <p style="font-family:'Old Standard TT',serif;font-size:12px;color:#888;margin-top:16px;font-style:italic">You have lifetime access. Work at whatever pace fits your schedule. The four-week guide is a suggestion, not a deadline. The only rule is that you finish.</p>
+</div>
+
+<button onclick="showPrecourse()" class="start-btn">Start the Course &#8594;</button>
     </div>
     <div class="completion-screen" id="completion-screen">
       <div class="completion-icon">&#127881;</div>
@@ -431,12 +1148,109 @@ a { color:inherit; text-decoration:none }
       <div class="completion-divider"></div>
       <p class="completion-subtitle">You have completed Building an Unshakeable Organization. What you have built here, the insights, the reflections, the plan, is more valuable than any certificate. Now go use it.</p>
       <div class="completion-actions">
-        <a href="https://wayportconsulting.com/contact" target="_blank" class="comp-btn-primary">Talk to David About Your Plan</a>
+        
         <button onclick="showWelcome()" class="comp-btn-secondary">Review the Course</button>
+        <button onclick="downloadCertificate()" class="comp-btn-secondary" style="background:#F7F9FB;border:1px solid #D4882A;color:#D4882A">&#127941; Download Certificate</button>
+        <button onclick="exportWorkPDF()" class="comp-btn-secondary" style="background:#F7F9FB;border:1px solid #EEF2F6">&#8659; Download My Work (PDF)</button>
       </div>
       <p class="completion-tagline">Clarity Changes Everything.</p>
+
+
+<div class="graduate-offer">
+  <div class="graduate-offer-badge">Course Graduate Offer</div>
+  <h3 class="graduate-offer-title">You Have Done the Work.<br>Now Let&rsquo;s Go Deeper.</h3>
+  <div class="graduate-offer-divider"></div>
+  <p class="graduate-offer-subtitle">As a course graduate, you have already done the foundational work. You know your scorecard results. You have named your gaps. You have built a 90-day plan. When you are ready to accelerate that work with direct support, I want to make that as easy as possible.</p>
+  <div class="graduate-offer-tiers">
+    <div class="offer-tier">
+      <div class="offer-tier-discount">$500 off</div>
+      <div class="offer-tier-name">Strategic Intensive</div>
+      <div class="offer-tier-desc">A one to two-day strategic session. Apply your course work directly with David alongside your leadership team.</div>
     </div>
-    <div class="lesson-wrapper" id="wrap_welcome"><article class="lesson" id="lesson-welcome"><div class="lesson-module-label">Start Here: Assess Your Organization</div><h1 class="lesson-title">Welcome to the Course</h1><div class="lesson-meta"><span>&#9201; 5 min</span><span>Lesson 1 of 14</span></div><div class="lesson-body">
+    <div class="offer-tier">
+      <div class="offer-tier-discount">$1,000 off</div>
+      <div class="offer-tier-name">First Month of Ongoing Consulting</div>
+      <div class="offer-tier-desc">Monthly organizational health work. Build on everything you started in this course with ongoing support and accountability.</div>
+    </div>
+    <div class="offer-tier">
+      <div class="offer-tier-discount">Free</div>
+      <div class="offer-tier-name">30-Minute Graduate Conversation</div>
+      <div class="offer-tier-desc">No pitch. No obligation. A real conversation about what you found in the course and what your organization needs most right now.</div>
+    </div>
+  </div>
+  <div class="graduate-offer-expiry">&#9201; This offer is available for 90 days from your course completion date. Mention that you are a course graduate when you reach out.</div>
+  <a href="https://wayportconsulting.com/contact" target="_blank" class="graduate-offer-cta">Claim Your Graduate Offer &rarr;</a>
+  <p class="graduate-offer-note">Email david@wayportconsulting.com or use the contact form. David responds personally to every inquiry.</p>
+</div>
+
+<div class="review-section" id="course-review">
+  <div class="review-header">
+    <div class="review-icon">&#11088;</div>
+    <div>
+      <div class="review-title">Share Your Experience</div>
+      <div class="review-subtitle">Your honest feedback helps other leaders decide if this course is right for them.</div>
+    </div>
+  </div>
+
+  <!-- Star Rating -->
+  <div class="review-prompt">How would you rate this course overall?</div>
+  <div class="star-row" id="star-row">
+    <span class="star" data-val="1" onclick="setStars(1)">&#9733;</span>
+    <span class="star" data-val="2" onclick="setStars(2)">&#9733;</span>
+    <span class="star" data-val="3" onclick="setStars(3)">&#9733;</span>
+    <span class="star" data-val="4" onclick="setStars(4)">&#9733;</span>
+    <span class="star" data-val="5" onclick="setStars(5)">&#9733;</span>
+  </div>
+  <input type="hidden" id="rv_stars" value="0">
+
+  <!-- Name / Org / Role -->
+  <div class="review-form-grid">
+    <input type="text"  id="rv_name" class="review-input" placeholder="Your Name">
+    <input type="text"  id="rv_role" class="review-input" placeholder="Your Title / Role">
+    <input type="text"  id="rv_org"  class="review-input" placeholder="Organization">
+    <input type="email" id="rv_email" class="review-input" placeholder="Email (not published)">
+  </div>
+
+  <!-- Three response fields -->
+  <div class="review-prompt">What was your biggest takeaway from this course?</div>
+  <textarea id="rv_takeaway" class="review-textarea" placeholder="What insight or framework will you carry forward from this experience?"></textarea>
+
+  <div class="review-prompt">What changed in how you think about your organization?</div>
+  <textarea id="rv_changed" class="review-textarea" placeholder="What shifted in your perspective, your priorities, or your approach to leading?"></textarea>
+
+  <div class="review-prompt">What would you tell another leader considering this course?</div>
+  <textarea id="rv_recommend" class="review-textarea" placeholder="Be honest. What would you want someone to know before they enroll?"></textarea>
+
+  <!-- Permission -->
+  <div class="review-permission">
+    <input type="checkbox" id="rv_permission">
+    <label for="rv_permission">I give Wayport Consulting permission to share my feedback as a testimonial on their website and marketing materials. My name, title, and organization may be included.</label>
+  </div>
+
+  <button class="review-submit-btn" id="rv-submit-btn" onclick="submitReview()">Submit My Review</button>
+  <div class="review-success" id="rv-success">
+    <strong>Thank you for sharing your experience.</strong><br>
+    Your feedback means a great deal. David reads every response personally and it directly shapes how the course continues to evolve. If you gave permission to share your feedback, look for it on the Wayport Consulting website soon.
+  </div>
+</div>
+
+    </div>
+    <div class="precourse-screen" id="precourse-screen" style="display:none">
+  <div class="precourse-badge">Before You Begin</div>
+  <h1 class="precourse-title">Three Questions Before You Start</h1>
+  <p class="precourse-subtitle">Take five minutes to answer these honestly before you begin Module 00. Your answers create a personal anchor for everything that follows. When you finish the course, you will return to these to see how your thinking has shifted.</p>
+  <div class="precourse-box">
+    <div class="precourse-prompt">1. What is the single biggest organizational challenge you are facing right now?</div>
+    <textarea class="precourse-textarea" id="pre_challenge" placeholder="Be specific. Not a category like 'culture' but the actual problem you feel most days..."></textarea>
+    <div class="precourse-prompt">2. What would your organization look like if it were performing at its full potential?</div>
+    <textarea class="precourse-textarea" id="pre_vision" placeholder="Describe it in concrete terms. What would be different about how your team operates, communicates, and delivers results?"></textarea>
+    <div class="precourse-prompt">3. What do you most need to change about how you lead in order to close that gap?</div>
+    <textarea class="precourse-textarea" id="pre_leader" placeholder="This is the hardest question. Answer it honestly before the course shapes your thinking..."></textarea>
+  </div>
+  <button class="precourse-btn" onclick="savePrecourse()">Save and Begin the Course &rarr;</button>
+  <p class="precourse-note">Your answers are saved privately in this browser. Only you can see them. They will be waiting for you when you return to the course.</p>
+</div>
+<div class="lesson-wrapper" id="wrap_welcome"><article class="lesson" id="lesson-welcome"><div class="lesson-module-label">Start Here: Assess Your Organization</div><h1 class="lesson-title">Welcome to the Course</h1><div class="lesson-meta"><span>&#9201; 5 min</span><span>Lesson 1 of 14</span></div><div class="lesson-body">
             <p>Welcome. The fact that you're here says something important about you as a leader: you're willing to look honestly at your organization, not just at the polished version you present to the world.</p>
             <p>This course was built on one core belief: <strong>most organizational problems are not people problems. They are systems problems.</strong> Problems of clarity, trust, culture, engagement, and leadership. And the leaders who figure that out are the ones who build organizations that perform at their best, especially when conditions are anything but ideal.</p>
             <h3>What You'll Get From This Course</h3>
@@ -449,7 +1263,7 @@ a { color:inherit; text-decoration:none }
               <li><strong>Do the action steps.</strong> One action step completed this week is worth ten lessons read and forgotten.</li>
               <li><strong>Share it with your leadership team.</strong> The most powerful use of this course is to take it together and compare your answers. The gaps between your perspectives are the gaps in your organization.</li>
             </ul>
-            <div class="lesson-insight"><div class="lesson-insight-label">A Note From David</div><p>I built this course from nearly two decades of leading organizations across the Navy, Fortune 50, and entrepreneurship, and from the work I do every day alongside leaders. Everything in here is field-tested. Nothing is borrowed from a textbook. I hope it gives you exactly what you need to build the organization you know is possible.</p></div>
+            <div class="lesson-insight"><div class="lesson-insight-label">A Note From David</div><p>This course is a field guide built from nearly two decades of leading organizations across the Navy, Fortune 50, and entrepreneurship, hundreds of books, and countless hours learning from leaders at every level and across every industry. Nothing in here is original to me alone. The best ideas rarely are. What I have tried to do is distill what actually works, strip away what does not, and give you the clearest possible path to building the organization you already know is possible. Consider this the book I wish someone had handed me twenty years ago.</p></div>
           </div><div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
@@ -459,7 +1273,7 @@ a { color:inherit; text-decoration:none }
             <textarea class="ref-textarea" id="ref_intro_why" placeholder="Write your honest reflection here..."
               oninput="saveRef('intro_why', this.value)"></textarea><div class="ref-prompt">2. If you had to name the single biggest challenge your organization is facing today, what would it be?</div>
             <textarea class="ref-textarea" id="ref_intro_challenge" placeholder="Write your honest reflection here..."
-              oninput="saveRef('intro_challenge', this.value)"></textarea><div class="ref-prompt">3. What would "unshakeable" look like for your organization? Describe it in two or three sentences.</div>
+              oninput="saveRef('intro_challenge', this.value)"></textarea><div class="ref-prompt">3. What would your organization look like if every person on your team was clear on the priority, trusted leadership, and showed up fully invested in the outcome?</div>
             <textarea class="ref-textarea" id="ref_intro_vision" placeholder="Write your honest reflection here..."
               oninput="saveRef('intro_vision', this.value)"></textarea></div><nav class="lesson-nav"><span></span><div class="nav-center"><button onclick="markDone('welcome')" class="mark-done-btn" id="done_welcome">Mark Complete</button><a href="#lesson-scorecard" onclick="showLesson('scorecard')" class="nav-btn nav-btn-next">Next &#8594;</a></div></nav></article></div><div class="lesson-wrapper" id="wrap_scorecard"><article class="lesson" id="lesson-scorecard"><div class="lesson-module-label">Start Here: Assess Your Organization</div><h1 class="lesson-title">Take the Team Health Assessment</h1><div class="lesson-meta"><span>&#9201; 10 min</span><span>Lesson 2 of 14</span></div><div class="lesson-body">
             <p>Before we go any further, you need an honest baseline. The Team Health Scorecard below is the same assessment used with organizations across the country. It measures your organization across the five dimensions covered in this course.</p>
@@ -468,7 +1282,7 @@ a { color:inherit; text-decoration:none }
             <h3>Your Assessment</h3>
             <p>Rate each statement from 1 (Rarely True) to 5 (Almost Always True). Be honest. This is for your eyes only.</p>
           </div><div class="sc-intro"><h3>Your Assessment</h3><p>Rate each statement from 1 (Rarely True) to 5 (Almost Always True). Be honest. This is for your eyes only.</p></div><div class="scorecard-wrap"><div class="sc-section">
-          <div class="sc-section-header" style="background:#2E7D8C">
+          <div class="sc-section-header" style="background:#1A2A41">
             <span class="sc-section-title">Clarity & Direction</span>
             <span class="sc-pill" id="pill_0">0 / 20</span>
           </div><div class="sc-question" id="qrow_0_0">
@@ -1109,7 +1923,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>Step 3: Create a decision filter.</strong> Give your team a simple test for every new opportunity, request, or initiative: Does this move us toward our number one priority? If yes, act. If no, decline or defer. Clarity is not just about goals. It is about what you say no to.</p>
             <p><strong>Step 4: Test comprehension, not communication.</strong> Regularly ask team members at different levels what the top priority is. Not to quiz them, but to calibrate. The variance in their answers is your clarity score. When you hear the same answer consistently, you have achieved organizational clarity.</p>
             <div class="lesson-callout"><strong>The Clarity Audit:</strong> Once per quarter, ask your leadership team to independently complete three sentences: "Our most important priority right now is..." "My role in achieving that is..." "I will know we are winning when..." Compare the answers. The alignment or misalignment you see is your organization's clarity health score.</div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Module Summary: Clarity & Direction</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Clarity is not the absence of uncertainty. It is the presence of direction despite it. You have named your top priority, defined what winning looks like in key roles, created a decision filter, and committed to testing comprehension rather than assuming communication. Your team cannot execute what they cannot name. Now they can name it.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Building Clarity Reflection</div>
@@ -1185,7 +2004,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>Distinguish between productive conflict and personal conflict.</strong> Teach your team that disagreement about ideas is expected and valued. Personal attacks are not tolerated. Make this distinction explicit and enforce it consistently.</p>
             <p><strong>Follow through on what you hear.</strong> When someone takes the risk to share a concern, something must happen as a result. It does not have to be that their concern changes the decision. But it must be acknowledged, considered, and responded to. Teams that raise concerns and never see any response stop raising concerns.</p>
             <div class="lesson-callout">The fastest trust-rebuilding move a leader can make is to own something specific. Not a general "I want to be more open" speech. A specific conversation: "I know I shut you down in that meeting and that was not right." People remember when leaders own their behavior. It is the single fastest way to start rebuilding trust.</div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Module Summary: Trust & Psychological Safety</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Trust is not rebuilt through a team-building exercise. It is rebuilt in the everyday moments when a leader chooses how to respond to honesty. You have examined how trust erodes, what it costs, and what practices build it back. Organizations with high trust surface problems early enough to solve them. That early warning system starts with how you respond the next time someone tells you something you do not want to hear.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Building Trust Reflection</div>
@@ -1254,7 +2078,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>Make them visible in decisions.</strong> When you face a hard call, name the value at stake out loud. "Here is what our commitment to integrity requires of us in this situation." That is how values stop being abstract and start being operational.</p>
             <p><strong>Hold the standard when it costs you something.</strong> Anyone can uphold a value when it is easy. Culture is defined by what you do when holding the standard is inconvenient, expensive, or uncomfortable. Those are the moments your team remembers.</p>
             <div class="lesson-callout">Values that keep you grounded in uncertain times are not the ones on your wall. They are the patterns of decisions your organization makes when it is easy to compromise and hard to hold the line. Every shortcut taken in a crisis is a values decision. Every standard upheld under pressure is too.</div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Module Summary: Culture & Values</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Culture is not what you say. It is what you reward, what you tolerate, and what you model. You have examined the gap between your stated values and your lived culture, and identified the specific behaviors that would close it. Values that function as a decision filter, not a poster, are the ones that keep the right people on the bus and the organization grounded when obstacles arrive.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Values as Filter Reflection</div>
@@ -1327,7 +2156,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>Clear decision rights.</strong> What decisions can this person make independently? Where do they need to consult? Where do they need approval? Without this clarity, authority defaults back to the leader every time.</p>
             <p><strong>The willingness to let them be wrong.</strong> Real ownership means sometimes the person you have empowered will make a decision you would not have made. Resist the temptation to override. The moment you override a decision that falls within someone's authority, you have taken back the ownership. And everyone watching has noticed.</p>
             <div class="lesson-insight"><div class="lesson-insight-label">Key Insight</div><p>When people have real ownership, when they can see the connection between their decisions and the outcomes they are accountable for, they stop being employees doing a job and start being contributors building something. The work becomes personal. The investment becomes genuine.</p></div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Module Summary: Engagement & Motivation</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Hygiene factors remove dissatisfaction. Only motivators create genuine engagement. Real ownership requires both accountability and the authority to deliver on it. When people have work that stretches them, recognition that is specific and timely, and decisions they are genuinely empowered to make, they stop being employees doing a job and start being contributors building something.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Ownership Reflection</div>
@@ -1398,7 +2232,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>Give feedback in real time.</strong> Not in annual reviews. In the moment, specifically, and connected to a standard. "I noticed you did X in that meeting. The impact was Y. Next time, I would try Z." That is development. A year-end rating is not.</p>
             <p><strong>Invest in their career, not just their current role.</strong> Every person on your team has a direction they want to grow in. Do you know what it is? Have you built any part of their role around it? When people can see a path from where they are to where they want to be, they do not just work harder. They work with purpose.</p>
             <div class="lesson-insight"><div class="lesson-insight-label">Key Insight</div><p>The question every leader should ask about each person on their team is not "how do I get the most out of this person right now?" It is "what does this person need to become the leader they are capable of being?" Organizations that ask the second question build talent pipelines. Organizations that only ask the first burn through them.</p></div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Module Summary: Leadership Effectiveness</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">The highest form of leadership effectiveness is not making great decisions. It is building an organization that makes great decisions without you. Authority is a design decision, not a reward. Leaders who make themselves progressively less necessary by building the capability of the people around them multiply their impact. Leaders who create dependency limit it.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Leadership Development Reflection</div>
@@ -1469,7 +2308,12 @@ a { color:inherit; text-decoration:none }
             <p><strong>5. Who will hold me accountable?</strong> Name a person. A colleague, a coach, a leadership team member. Share your plan with them. Ask them to check in with you in 30 days.</p>
             <div class="lesson-callout"><strong>The Most Important Thing:</strong> Start before you feel ready. The leaders who improve their organizations are not the ones who built the perfect plan. They are the ones who started with an imperfect plan and adjusted as they learned. The first action step you take in the next 48 hours is worth more than any plan you could build.</div>
             <div class="lesson-insight"><div class="lesson-insight-label">A Final Note From David</div><p>Building an unshakeable organization is not a destination. It is a practice. The leaders who get this right are not the ones who solve it once. They are the ones who keep asking the hard questions, who stay honest about the gap between where they are and where they want to be, and who show up every day willing to do the work.</p><p>That is what this course has been preparing you for. Not a certificate. A practice.</p><p>If you would like to talk through your 90-day plan or explore whether working with Wayport Consulting makes sense for your organization, I would love to have that conversation.</p></div>
-          </div><div class="reflection-box">
+          </div>
+    <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Course Summary: Building an Unshakeable Organization</div>
+      <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Clarity gives your team direction. Trust makes honesty safe and surfaces problems early. Culture lived in behavior keeps the right people on the bus. Engagement and real ownership make every person a contributor rather than a passenger. Leadership that builds capability rather than dependency makes the whole stronger than the sum of its parts. These five dimensions are not independent. They are interdependent. Build all five and your organization becomes genuinely difficult to stop.</p>
+    </div>
+<div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
             <div><div class="reflection-title">Your 90-Day Plan</div>
@@ -1601,7 +2445,7 @@ a { color:inherit; text-decoration:none }
         <div class="footer-col-label">Quick Links</div>
         <a href="https://wayportconsulting.com">Home</a>
         <a href="https://wayportconsulting.com/about">About</a>
-        <a href="https://wayportconsulting.com/services">Services</a>
+        <a href="https://wayportconsulting.com/what-we-do">Services</a>
         <a href="https://wayportconsulting.com/blog">Blog</a>
         <a href="https://wayportconsulting.com/team-health-scorecard">Free Assessment</a>
       </div>
@@ -1615,7 +2459,7 @@ a { color:inherit; text-decoration:none }
         <div class="footer-col-label">This Course</div>
         <div class="footer-col-text">6 Modules &bull; 13 Lessons</div>
         <div class="footer-col-text">~4 Hours &bull; Lifetime Access</div>
-        <a href="https://payhip.com/b/FB3Qd" target="_blank" class="footer-lets-talk" style="background:rgba(255,255,255,.12);color:white;margin-top:8px">Enroll Others &rarr;</a>
+        <a href="https://buy.stripe.com/9B64gA9K3co9f7Abde0Jq00" target="_blank" class="footer-lets-talk" style="background:rgba(255,255,255,.12);color:white;margin-top:8px">Enroll Others &rarr;</a>
       </div>
     </div>
     <div class="footer-copy">&copy; 2026 Wayport Consulting &nbsp;&bull;&nbsp; North Kingstown, RI &nbsp;&bull;&nbsp; Clarity Changes Everything.</div>
@@ -1632,9 +2476,19 @@ function loadState() {
     const s = localStorage.getItem('wc_course');
     if (s) state = JSON.parse(s);
   } catch(e) {}
+  // Ensure all required properties always exist regardless of stored data
+  if (!state || typeof state !== 'object') state = {};
+  if (!state.completed  || typeof state.completed  !== 'object') state.completed  = {};
+  if (!state.reflections|| typeof state.reflections!== 'object') state.reflections= {};
+  if (!state.actions    || typeof state.actions    !== 'object') state.actions    = {};
+  if (!state.scorecard  || typeof state.scorecard  !== 'object') state.scorecard  = {};
 }
 function saveState() {
-  try { localStorage.setItem('wc_course', JSON.stringify(state)); } catch(e) {}
+  try {
+    if (state && typeof state === 'object') {
+      localStorage.setItem('wc_course', JSON.stringify(state));
+    }
+  } catch(e) {}
 }
 
 /* ── PROGRESS ── */
@@ -1659,6 +2513,13 @@ function showLesson(id) {
     if (state.reflections[key]) el.value = state.reflections[key];
   });
   restoreActions(id);
+  if (state.scorecard) {
+    Object.keys(state.scorecard).forEach(function(name){
+      const r = document.querySelector('input[name="' + name + '"][value="' + state.scorecard[name] + '"]');
+      if (r) r.checked = true;
+    });
+    if (typeof scUpdate === 'function') scUpdate();
+  }
   // Update sidebar
   document.querySelectorAll('.sb-lesson').forEach(el => el.classList.remove('active'));
   const sblink = document.getElementById('sblink_' + id);
@@ -1704,6 +2565,12 @@ function markDone(id) {
   const sbchk = document.getElementById('sbchk_' + id);
   if (sbchk) { const sblink = sbchk.closest('.sb-lesson'); if(sblink) sblink.classList.add('done'); }
   updateSidebarModules(id);
+  // Show celebration for module-ending lessons
+  const celebrationIds = ['clarity-action','trust-building','culture-values',
+    'engagement-ownership','leadership-development','plan'];
+  if (celebrationIds.includes(id)) {
+    setTimeout(() => showCelebration(id), 400);
+  }
 }
 
 /* ── SIDEBAR ── */
@@ -1750,8 +2617,9 @@ function toggleAction(key) {
 }
 
 function restoreActions(lessonId) {
-  Object.keys(state.actions).forEach(key => {
-    if (key.startsWith(lessonId + '_a') && state.actions[key]) {
+  const actions = state.actions || {};
+  Object.keys(actions).forEach(key => {
+    if (key.startsWith(lessonId + '_a') && actions[key]) {
       const chk = document.getElementById('achk_' + key);
       const txt = document.getElementById('atxt_' + key);
       if (chk) chk.classList.add('done');
@@ -1794,6 +2662,14 @@ function scUpdate() {
     const checked = document.querySelector('input[name="q_' + si + '_' + qi + '"]:checked');
     c.classList.toggle('selected', checked && parseInt(checked.value) === v);
   });
+  try {
+    if (!state.scorecard || typeof state.scorecard !== 'object') state.scorecard = {};
+    for (let si = 0; si < 5; si++) for (let qi = 0; qi < 4; qi++) {
+      const ch = document.querySelector('input[name="q_' + si + '_' + qi + '"]:checked');
+      if (ch) state.scorecard['q_' + si + '_' + qi] = parseInt(ch.value);
+    }
+    saveState();
+  } catch(e) {}
 }
 
 // Wire up score circles
@@ -1855,56 +2731,599 @@ function closeMobileDrawer() {
   if (d) d.classList.remove('open');
 }
 
+
+/* ── EXPORT REFLECTIONS ── */
+function exportReflections() {
+  const state = JSON.parse(localStorage.getItem('wc_course') || '{}');
+  const refs  = state.reflections || {};
+  const acts  = state.actions     || {};
+  const done  = state.completed   || {};
+
+  const MODULES = [
+    { title: 'Start Here: Assess Your Organization', lessons: [
+      { id: 'welcome',   title: 'Welcome to the Course',          prompts: [
+        { key: 'intro_why',       q: 'What made you invest in this course right now?' },
+        { key: 'intro_challenge', q: 'If you had to name the single biggest challenge your organization is facing today, what would it be?' },
+        { key: 'intro_vision',    q: 'What would your organization look like if every person on your team was clear on the priority, trusted leadership, and showed up fully invested in the outcome?' },
+      ]},
+      { id: 'scorecard', title: 'Team Health Assessment', prompts: [
+        { key: 'scorecard_high',    q: 'Which dimension scored highest? What explains that strength?' },
+        { key: 'scorecard_low',     q: 'Which dimension scored lowest? Does that surprise you?' },
+        { key: 'scorecard_insight', q: 'What is the single most important insight from your results?' },
+      ]},
+    ]},
+    { title: 'Module 1: Clarity & Direction', lessons: [
+      { id: 'clarity-intro',  title: 'The Clarity Problem Nobody Talks About', prompts: [
+        { key: 'clarity_priority', q: 'What is your organization\'s single most important priority right now?' },
+        { key: 'clarity_gap',      q: 'If you asked five people on your team that same question, how different would their answers be?' },
+        { key: 'clarity_winning',  q: 'For your most important role, what does winning look like?' },
+      ]},
+      { id: 'clarity-action', title: 'Building Clarity: A Practical Framework', prompts: [
+        { key: 'clarity_90day',    q: 'What is your 90-day number one priority?' },
+        { key: 'clarity_decision', q: 'What is one decision that should belong to someone else?' },
+        { key: 'clarity_stop',     q: 'What is one thing your team is doing that does not connect to your priority?' },
+      ]},
+    ]},
+    { title: 'Module 2: Trust & Psychological Safety', lessons: [
+      { id: 'trust-intro',    title: 'The Foundation That Makes Everything Work', prompts: [
+        { key: 'trust_response', q: 'Think about the last time someone brought you bad news. How did you respond?' },
+        { key: 'trust_holding',  q: 'Are there people on your team who are holding back concerns?' },
+        { key: 'trust_self',     q: 'What is one pattern in your own behavior that may make honesty feel costly?' },
+      ]},
+      { id: 'trust-building', title: 'Building a High-Trust Culture', prompts: [
+        { key: 'trust_signal',   q: 'What could you do this week to signal that honesty is safe?' },
+        { key: 'trust_repair',   q: 'Is there a relationship on your team where trust has been damaged?' },
+        { key: 'trust_meetings', q: 'What would you change about how you run meetings?' },
+      ]},
+    ]},
+    { title: 'Module 3: Culture & Values', lessons: [
+      { id: 'culture-intro',  title: "Your Culture Is Not What You Say. It's What You Do.", prompts: [
+        { key: 'culture_reward',   q: 'Think about the last person you promoted. What did that signal?' },
+        { key: 'culture_tolerate', q: 'What behavior have you been tolerating that contradicts your values?' },
+        { key: 'culture_model',    q: 'In what ways does your own behavior model the culture you want?' },
+      ]},
+      { id: 'culture-values', title: 'Values as a Filter, Not a Poster', prompts: [
+        { key: 'values_behavior', q: 'Take your most important value. Write the specific behavior that demonstrates it.' },
+        { key: 'values_hiring',   q: 'How did cultural fit factor into your last hiring decision?' },
+        { key: 'values_decision', q: 'In your last significant decision, did you name the value at stake out loud?' },
+      ]},
+    ]},
+    { title: 'Module 4: Engagement & Motivation', lessons: [
+      { id: 'engagement-intro',     title: "Why You Can't Pay Your Way to an Engaged Team", prompts: [
+        { key: 'engage_high',     q: 'Think about your most engaged team member. What drives that engagement?' },
+        { key: 'engage_low',      q: 'Think about your least engaged team member. What is missing?' },
+        { key: 'engage_strategy', q: 'Are you building your people strategy around preventing dissatisfaction or creating engagement?' },
+      ]},
+      { id: 'engagement-ownership', title: 'Real Responsibility vs. the Illusion of Ownership', prompts: [
+        { key: 'ownership_decisions', q: 'In the last 30 days, what decisions came back to you that should have belonged to someone else?' },
+        { key: 'ownership_authority', q: 'For your most senior direct report: can they describe their authority clearly?' },
+        { key: 'ownership_takeback',  q: 'Where have you taken back ownership after giving it away?' },
+      ]},
+    ]},
+    { title: 'Module 5: Leadership Effectiveness', lessons: [
+      { id: 'leadership-intro',       title: 'Are You the Bottleneck?', prompts: [
+        { key: 'lead_bottleneck', q: 'What percentage of decisions that reach you should have been made by someone else?' },
+        { key: 'lead_capability', q: 'Are the leaders on your team building capability or creating dependency?' },
+        { key: 'lead_delegate',   q: 'What is the most important decision you made last month that you should have delegated?' },
+      ]},
+      { id: 'leadership-development', title: 'Building Leaders Who Build Leaders', prompts: [
+        { key: 'devlead_growth',   q: 'For each direct report, can you name their growth edge?' },
+        { key: 'devlead_stretch',  q: 'When did you last give someone a stretch assignment and stay with them through the difficulty?' },
+        { key: 'devlead_legacy',   q: 'What would your team lose if you left tomorrow?' },
+      ]},
+    ]},
+    { title: 'Module 6: Your 90-Day Action Plan', lessons: [
+      { id: 'synthesis', title: 'Synthesizing Your Insights', prompts: [
+        { key: 'synthesis_priority', q: 'Which single area represents the biggest opportunity for your organization right now?' },
+        { key: 'synthesis_self',     q: 'What is the most important thing you learned about yourself as a leader?' },
+        { key: 'synthesis_org',      q: 'What is the most important thing you learned about your organization?' },
+      ]},
+      { id: 'plan', title: 'Build Your 90-Day Plan', prompts: [
+        { key: 'plan_dimension', q: 'My one priority dimension for the next 90 days is...' },
+        { key: 'plan_current',   q: 'The current state in this dimension is...' },
+        { key: 'plan_success',   q: 'Success in 90 days would look like...' },
+      ]},
+    ]},
+  ];
+
+  const LINE = '='.repeat(60);
+  const line = '-'.repeat(60);
+  let txt = '';
+  txt += 'WAYPORT CONSULTING\n';
+  txt += 'Building an Unshakeable Organization\n';
+  txt += 'My Reflections & Action Steps\n';
+  txt += LINE + '\n';
+  txt += 'Exported: ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) + '\n';
+  txt += LINE + '\n\n';
+
+  let totalAnswered = 0, totalQ = 0;
+
+  MODULES.forEach((mod, mi) => {
+    txt += '\n' + LINE + '\n';
+    txt += mod.title.toUpperCase() + '\n';
+    txt += LINE + '\n';
+    mod.lessons.forEach((lesson, li) => {
+      const isComplete = done[mi + '_' + li] ? ' [COMPLETE]' : '';
+      txt += '\n  ' + lesson.title + isComplete + '\n';
+      txt += '  ' + line + '\n';
+      lesson.prompts.forEach(p => {
+        totalQ++;
+        const ans = refs[p.key] || '';
+        if (ans.trim()) totalAnswered++;
+        txt += '\n  Q: ' + p.q + '\n';
+        txt += '  A: ' + (ans.trim() || '(not answered)') + '\n';
+      });
+
+      // Action steps
+      const actionKeys = Object.keys(acts).filter(k => k.startsWith(lesson.id + '_a') && acts[k]);
+      if (actionKeys.length > 0) {
+        txt += '\n  Completed Action Steps: ' + actionKeys.length + '\n';
+      }
+    });
+  });
+
+  txt += '\n\n' + LINE + '\n';
+  txt += 'SUMMARY\n';
+  txt += LINE + '\n';
+  txt += 'Reflections answered: ' + totalAnswered + ' of ' + totalQ + '\n';
+  txt += 'Lessons completed: ' + Object.values(done).filter(Boolean).length + ' of 14\n';
+  txt += '\nWayport Consulting  |  david@wayportconsulting.com  |  401-824-9757\n';
+  txt += 'Clarity Changes Everything.\n';
+
+  // Download as .txt file
+  const blob = new Blob([txt], {type: 'text/plain'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'Wayport_My_Course_Reflections.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ── EXPORT WORK AS BRANDED PDF ── */
+function exportWorkPDF() {
+  const st   = JSON.parse(localStorage.getItem('wc_course') || '{}');
+  const refs = st.reflections || {};
+  const done = st.completed   || {};
+  const sc   = st.scorecard   || {};
+  const nm   = (document.getElementById('sc_fname')||{}).value || '';
+  const org  = (document.getElementById('sc_org')||{}).value || '';
+
+  const PILLARS = ['Clarity & Direction','Trust & Psychological Safety','Culture & Values','Engagement & Motivation','Leadership Effectiveness'];
+  const BANDS = [
+    {min:80,label:'High-Performing Team',color:'#1B7A4A'},
+    {min:60,label:'Solid, With Clear Gaps',color:'#27AE60'},
+    {min:40,label:'Significant Growth Opportunity',color:'#D4882A'},
+    {min:0, label:'Urgent Attention Needed',color:'#C0392B'}
+  ];
+  let secScores = [], total = 0, anyScore = false;
+  for (let si=0; si<5; si++){
+    let s=0;
+    for (let qi=0; qi<4; qi++){ const v=sc['q_'+si+'_'+qi]; if(v){ s+=parseInt(v); anyScore=true; } }
+    secScores.push(s); total += s;
+  }
+  const band = BANDS.find(b => total >= b.min);
+
+  const MODULES = [
+    { title: 'Start Here: Assess Your Organization', lessons: [
+      { id: 'welcome', title: 'Welcome to the Course', prompts: [
+        { key: 'intro_why',       q: 'What made you invest in this course right now?' },
+        { key: 'intro_challenge', q: 'If you had to name the single biggest challenge your organization is facing today, what would it be?' },
+        { key: 'intro_vision',    q: 'What would your organization look like if every person on your team was clear on the priority, trusted leadership, and showed up fully invested in the outcome?' },
+      ]},
+      { id: 'scorecard', title: 'Team Health Assessment', prompts: [
+        { key: 'scorecard_high',    q: 'Which dimension scored highest? What explains that strength?' },
+        { key: 'scorecard_low',     q: 'Which dimension scored lowest? Does that surprise you?' },
+        { key: 'scorecard_insight', q: 'What is the single most important insight from your results?' },
+      ]},
+    ]},
+    { title: 'Module 1: Clarity & Direction', lessons: [
+      { id: 'clarity-intro', title: 'The Clarity Problem Nobody Talks About', prompts: [
+        { key: 'clarity_priority', q: 'What is your organization\'s single most important priority right now?' },
+        { key: 'clarity_gap',      q: 'If you asked five people on your team that same question, how different would their answers be?' },
+        { key: 'clarity_winning',  q: 'For your most important role, what does winning look like?' },
+      ]},
+      { id: 'clarity-action', title: 'Building Clarity: A Practical Framework', prompts: [
+        { key: 'clarity_90day',    q: 'What is your 90-day number one priority?' },
+        { key: 'clarity_decision', q: 'What is one decision that should belong to someone else?' },
+        { key: 'clarity_stop',     q: 'What is one thing your team is doing that does not connect to your priority?' },
+      ]},
+    ]},
+    { title: 'Module 2: Trust & Psychological Safety', lessons: [
+      { id: 'trust-intro', title: 'The Foundation That Makes Everything Work', prompts: [
+        { key: 'trust_response', q: 'Think about the last time someone brought you bad news. How did you respond?' },
+        { key: 'trust_holding',  q: 'Are there people on your team who are holding back concerns?' },
+        { key: 'trust_self',     q: 'What is one pattern in your own behavior that may make honesty feel costly?' },
+      ]},
+      { id: 'trust-building', title: 'Building a High-Trust Culture', prompts: [
+        { key: 'trust_signal',   q: 'What could you do this week to signal that honesty is safe?' },
+        { key: 'trust_repair',   q: 'Is there a relationship on your team where trust has been damaged?' },
+        { key: 'trust_meetings', q: 'What would you change about how you run meetings?' },
+      ]},
+    ]},
+    { title: 'Module 3: Culture & Values', lessons: [
+      { id: 'culture-intro', title: "Your Culture Is Not What You Say. It's What You Do.", prompts: [
+        { key: 'culture_reward',   q: 'Think about the last person you promoted. What did that signal?' },
+        { key: 'culture_tolerate', q: 'What behavior have you been tolerating that contradicts your values?' },
+        { key: 'culture_model',    q: 'In what ways does your own behavior model the culture you want?' },
+      ]},
+      { id: 'culture-values', title: 'Values as a Filter, Not a Poster', prompts: [
+        { key: 'values_behavior', q: 'Take your most important value. Write the specific behavior that demonstrates it.' },
+        { key: 'values_hiring',   q: 'How did cultural fit factor into your last hiring decision?' },
+        { key: 'values_decision', q: 'In your last significant decision, did you name the value at stake out loud?' },
+      ]},
+    ]},
+    { title: 'Module 4: Engagement & Motivation', lessons: [
+      { id: 'engagement-intro', title: "Why You Can't Pay Your Way to an Engaged Team", prompts: [
+        { key: 'engage_high',     q: 'Think about your most engaged team member. What drives that engagement?' },
+        { key: 'engage_low',      q: 'Think about your least engaged team member. What is missing?' },
+        { key: 'engage_strategy', q: 'Are you building your people strategy around preventing dissatisfaction or creating engagement?' },
+      ]},
+      { id: 'engagement-ownership', title: 'Real Responsibility vs. the Illusion of Ownership', prompts: [
+        { key: 'ownership_decisions', q: 'In the last 30 days, what decisions came back to you that should have belonged to someone else?' },
+        { key: 'ownership_authority', q: 'For your most senior direct report: can they describe their authority clearly?' },
+        { key: 'ownership_takeback',  q: 'Where have you taken back ownership after giving it away?' },
+      ]},
+    ]},
+    { title: 'Module 5: Leadership Effectiveness', lessons: [
+      { id: 'leadership-intro', title: 'Are You the Bottleneck?', prompts: [
+        { key: 'lead_bottleneck', q: 'What percentage of decisions that reach you should have been made by someone else?' },
+        { key: 'lead_capability', q: 'Are the leaders on your team building capability or creating dependency?' },
+        { key: 'lead_delegate',   q: 'What is the most important decision you made last month that you should have delegated?' },
+      ]},
+      { id: 'leadership-development', title: 'Building Leaders Who Build Leaders', prompts: [
+        { key: 'devlead_growth',  q: 'For each direct report, can you name their growth edge?' },
+        { key: 'devlead_stretch', q: 'When did you last give someone a stretch assignment and stay with them through the difficulty?' },
+        { key: 'devlead_legacy',  q: 'What would your team lose if you left tomorrow?' },
+      ]},
+    ]},
+    { title: 'Module 6: Your 90-Day Action Plan', lessons: [
+      { id: 'synthesis', title: 'Synthesizing Your Insights', prompts: [
+        { key: 'synthesis_priority', q: 'Which single area represents the biggest opportunity for your organization right now?' },
+        { key: 'synthesis_self',     q: 'What is the most important thing you learned about yourself as a leader?' },
+        { key: 'synthesis_org',      q: 'What is the most important thing you learned about your organization?' },
+      ]},
+      { id: 'plan', title: 'Build Your 90-Day Plan', prompts: [
+        { key: 'plan_dimension', q: 'My one priority dimension for the next 90 days is...' },
+        { key: 'plan_current',   q: 'The current state in this dimension is...' },
+        { key: 'plan_success',   q: 'Success in 90 days would look like...' },
+      ]},
+    ]},
+  ];
+
+  const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  let scHtml = '';
+  if (anyScore) {
+    scHtml += '<table class="sc"><thead><tr><th>Dimension</th><th>Score</th></tr></thead><tbody>';
+    PILLARS.forEach(function(p,i){ scHtml += '<tr><td>'+p+'</td><td class="num">'+secScores[i]+' / 20</td></tr>'; });
+    scHtml += '</tbody></table>';
+    scHtml += '<div class="band" style="background:'+band.color+'"><span class="band-total">'+total+' / 100</span><span class="band-label">'+esc(band.label)+'</span></div>';
+  } else {
+    scHtml = '<p class="muted">The Team Health Scorecard has not been completed yet. Take it inside the course and your results will appear here.</p>';
+  }
+
+  let bodyHtml = '';
+  MODULES.forEach(function(mod, mi){
+    bodyHtml += '<h2>'+esc(mod.title)+'</h2>';
+    mod.lessons.forEach(function(lesson, li){
+      const isPlan = lesson.id === 'plan';
+      const chk = done[mi+'_'+li] ? ' <span class="chk">Complete</span>' : '';
+      bodyHtml += '<div class="lesson'+(isPlan?' plan':'')+'"><h3>'+esc(lesson.title)+chk+'</h3>';
+      lesson.prompts.forEach(function(p){
+        const a = (refs[p.key]||'').trim();
+        bodyHtml += '<div class="qa"><p class="q">'+esc(p.q)+'</p><p class="a'+(a?'':' blank')+'">'+(a?esc(a):'(left blank)')+'</p></div>';
+      });
+      bodyHtml += '</div>';
+    });
+  });
+
+  const today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const metaLine = (nm?esc(nm):'') + (nm&&org?' · ':'') + (org?esc(org):'') + ((nm||org)?' · ':'') + 'Exported ' + today;
+
+  const html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>My Work - Building an Unshakeable Organization</title>'
+    + '<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@400;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">'
+    + '<style>'
+    + '@page{margin:18mm 16mm}*{box-sizing:border-box}'
+    + 'body{font-family:"Old Standard TT",serif;color:#1A2A41;font-size:12pt;line-height:1.5;margin:0}'
+    + '.cover{background:#1A2A41;color:#fff;padding:26px 28px;margin-bottom:22px}'
+    + '.cover .brand{font-family:"Nunito",sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:10pt;color:#D4882A;font-weight:700}'
+    + '.cover h1{font-family:"Merriweather",serif;font-size:21pt;margin:6px 0 4px;color:#fff}'
+    + '.cover .sub{color:#C8D4DE;font-size:11pt}.cover .meta{margin-top:12px;font-size:10pt;color:#9FB0C0}'
+    + 'h2{font-family:"Merriweather",serif;color:#1A2A41;font-size:15pt;border-bottom:2px solid #D4882A;padding-bottom:4px;margin:26px 0 12px}'
+    + 'h3{font-family:"Merriweather",serif;font-size:12.5pt;margin:14px 0 6px;color:#253A55}'
+    + '.chk{font-family:"Nunito",sans-serif;font-size:8pt;background:#1A2A41;color:#fff;padding:2px 7px;border-radius:10px;vertical-align:middle;letter-spacing:1px;font-weight:700}'
+    + '.qa{margin:0 0 10px}.q{font-weight:700;margin:0 0 2px;color:#3A4A5A}.a{margin:0;white-space:pre-wrap}.a.blank{color:#9FB0C0;font-style:italic}'
+    + '.lesson{page-break-inside:avoid}.lesson.plan{background:#F7F9FB;border-left:4px solid #D4882A;padding:10px 14px;border-radius:0 6px 6px 0}'
+    + 'table.sc{width:100%;border-collapse:collapse;margin:6px 0}'
+    + 'table.sc th{font-family:"Nunito",sans-serif;text-align:left;font-size:9pt;text-transform:uppercase;letter-spacing:1px;color:#5E6B7A;border-bottom:1px solid #C8D4DE;padding:6px 4px}'
+    + 'table.sc td{padding:7px 4px;border-bottom:1px solid #EEF2F6}table.sc td.num{text-align:right;font-weight:700}'
+    + '.band{margin-top:10px;color:#fff;border-radius:6px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}'
+    + '.band-total{font-family:"Merriweather",serif;font-size:16pt;font-weight:900}'
+    + '.band-label{font-family:"Nunito",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:9pt}'
+    + '.muted{color:#5E6B7A;font-style:italic}'
+    + '.ft{margin-top:30px;padding-top:12px;border-top:1px solid #EEF2F6;font-family:"Nunito",sans-serif;font-size:9pt;color:#5E6B7A;text-align:center}'
+    + '.noprint{position:fixed;top:10px;right:10px;background:#D4882A;color:#fff;border:none;padding:10px 16px;border-radius:6px;font-family:sans-serif;font-weight:700;cursor:pointer}'
+    + '@media print{.noprint{display:none}}'
+    + '</style></head><body>'
+    + '<button class="noprint" onclick="window.print()">Save as PDF</button>'
+    + '<div class="cover"><div class="brand">Wayport Consulting</div><h1>Building an Unshakeable Organization</h1><div class="sub">Your Organizational Health Workbook</div><div class="meta">'+metaLine+'</div></div>'
+    + '<h2>Your Team Health Results</h2>' + scHtml
+    + bodyHtml
+    + '<div class="ft">Wayport Consulting &middot; david@wayportconsulting.com &middot; 401-824-9757<br>Clarity Changes Everything.</div>'
+    + '<scr'+'ipt>window.onload=function(){setTimeout(function(){window.print();},700);};</scr'+'ipt>'
+    + '</body></html>';
+
+  const w = window.open('', '_blank');
+  if (!w) { alert('Please allow pop-ups for this site, then click Download My Work again. Your saved work is safe.'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
+}
+
+
+
+/* ── REVIEW FORM ── */
+let rvStars = 0;
+
+function setStars(val) {
+  rvStars = val;
+  document.getElementById('rv_stars').value = val;
+  document.querySelectorAll('.star').forEach(s => {
+    s.classList.toggle('active', parseInt(s.dataset.val) <= val);
+  });
+}
+
+function submitReview() {
+  const name       = document.getElementById('rv_name').value.trim();
+  const role       = document.getElementById('rv_role').value.trim();
+  const org        = document.getElementById('rv_org').value.trim();
+  const email      = document.getElementById('rv_email').value.trim();
+  const takeaway   = document.getElementById('rv_takeaway').value.trim();
+  const changed    = document.getElementById('rv_changed').value.trim();
+  const recommend  = document.getElementById('rv_recommend').value.trim();
+  const permission = document.getElementById('rv_permission').checked;
+  const stars      = rvStars;
+
+  if (!name || !email || !recommend) {
+    alert('Please fill in your name, email, and what you would tell another leader before submitting.');
+    return;
+  }
+  if (stars === 0) {
+    alert('Please select a star rating before submitting.');
+    return;
+  }
+
+  const btn = document.getElementById('rv-submit-btn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const payload = {
+    'Name':         name,
+    'Title / Role': role  || '(not provided)',
+    'Organization': org   || '(not provided)',
+    'Email':        email,
+    'Star Rating':  stars + ' / 5',
+    'Biggest Takeaway':    takeaway  || '(not provided)',
+    'What Changed':        changed   || '(not provided)',
+    'Would Recommend':     recommend,
+    'Permission to Share': permission ? 'YES' : 'NO',
+    '_subject': 'Course Review: ' + stars + '/5 stars from ' + name + (org ? ' (' + org + ')' : ''),
+    '_replyto': email,
+  };
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://formspree.io/f/xwvwragv', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      btn.textContent = 'Review Submitted';
+      btn.disabled = true;
+      document.getElementById('rv-success').classList.add('show');
+      // Scroll to success message
+      document.getElementById('rv-success').scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
+  };
+  xhr.onerror = function() {
+    btn.textContent = 'Submit My Review';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email david@wayportconsulting.com directly.');
+  };
+  xhr.send(JSON.stringify(payload));
+}
+
+
+/* ── PRE-COURSE REFLECTION ── */
+function showPrecourse() {
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('precourse-screen').style.display = '';
+  // Restore any saved answers
+  const state = JSON.parse(localStorage.getItem('wc_course') || '{}');
+  const refs = state.reflections || {};
+  ['pre_challenge','pre_vision','pre_leader'].forEach(key => {
+    const el = document.getElementById(key);
+    if (el && refs[key]) el.value = refs[key];
+  });
+  window.scrollTo(0,0);
+}
+
+function savePrecourse() {
+  const state = JSON.parse(localStorage.getItem('wc_course') || '{}');
+  if (!state || typeof state !== 'object') { return showLesson('welcome'); }
+  if (!state.reflections || typeof state.reflections !== 'object') state.reflections = {};
+  ['pre_challenge','pre_vision','pre_leader'].forEach(key => {
+    const el = document.getElementById(key);
+    if (el) state.reflections[key] = el.value;
+  });
+  localStorage.setItem('wc_course', JSON.stringify(state));
+  document.getElementById('precourse-screen').style.display = 'none';
+  showLesson('welcome');
+}
+
+/* ── MODULE CELEBRATION ── */
+const CELEBRATIONS = {"clarity-action": {"emoji": "&#128161;", "title": "Module 1 Complete: Clarity & Direction", "msg": "You have named your top priority, defined what winning looks like in key roles, and built a decision filter for your team. Clarity is not the absence of uncertainty. It is the presence of direction despite it. Your team is already more aligned than they were before this module.", "next_id": "trust-intro"}, "trust-building": {"emoji": "&#129309;", "title": "Module 2 Complete: Trust & Psychological Safety", "msg": "You have examined how trust erodes and what it actually costs an organization. Trust is not rebuilt through an offsite. It is rebuilt in the everyday moments when a leader chooses how to respond to honesty. The choices you make this week matter more than any framework.", "next_id": "culture-intro"}, "culture-values": {"emoji": "&#127937;", "title": "Module 3 Complete: Culture & Values", "msg": "Culture is not what you say. It is what you do, what you reward, and what you tolerate. You now have a clear picture of where your stated values and your lived culture align, and where the gap needs closing. Values that live in behavior are the ones that actually hold an organization together.", "next_id": "engagement-intro"}, "engagement-ownership": {"emoji": "&#9889;", "title": "Module 4 Complete: Engagement & Motivation", "msg": "You cannot pay your way to an engaged team. Real ownership requires both accountability and authority. The leaders who close the engagement gap are the ones who stop managing the symptoms in their people and start fixing the systems around them.", "next_id": "leadership-intro"}, "leadership-development": {"emoji": "&#127757;", "title": "Module 5 Complete: Leadership Effectiveness", "msg": "The highest form of leadership is not making great decisions. It is building an organization that makes great decisions without you. You have examined where you are the bottleneck and what it would take to build leaders who build leaders.", "next_id": "synthesis"}, "plan": {"emoji": "&#127881;", "title": "Course Complete: Building an Unshakeable Organization", "msg": "You have done the work. The insights, the reflections, and the 90-day plan you built here are more valuable than any certificate. Now go use them. Your organization is capable. You have the framework to prove it.", "next_id": null}};
+let celNextId = null;
+
+function showCelebration(lessonId) {
+  const cel = CELEBRATIONS[lessonId];
+  if (!cel) return;
+  document.getElementById('cel-emoji').innerHTML = cel.emoji;
+  document.getElementById('cel-title').textContent = cel.title;
+  document.getElementById('cel-msg').textContent = cel.msg;
+  celNextId = cel.next_id;
+  const nextBtn = document.getElementById('cel-next-btn');
+  if (cel.next_id) {
+    nextBtn.textContent = 'Continue →';
+    nextBtn.style.display = '';
+  } else {
+    nextBtn.textContent = 'See My Results →';
+    nextBtn.style.display = '';
+  }
+  document.getElementById('mod-celebration').classList.add('show');
+}
+
+function closeCelebration(goNext) {
+  document.getElementById('mod-celebration').classList.remove('show');
+  if (goNext && celNextId) {
+    showLesson(celNextId);
+  } else if (goNext && !celNextId) {
+    showCompletion();
+  }
+  celNextId = null;
+}
+
+function showFrameworks() {
+  document.querySelectorAll('.lesson-wrapper').forEach(el => el.classList.remove('active'));
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('completion-screen').style.display = 'none';
+  if(document.getElementById('precourse-screen'))
+    document.getElementById('precourse-screen').style.display = 'none';
+  document.getElementById('wrap_frameworks').classList.add('active');
+  window.scrollTo(0,0);
+  closeMobileDrawer();
+}
+
+
+/* ── COMPLETION CERTIFICATE ── */
+function downloadCertificate() {
+  const nameInput = document.getElementById('rv_name');
+  const studentName = nameInput && nameInput.value.trim()
+    ? nameInput.value.trim()
+    : 'Course Graduate';
+  const date = new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+    <rect width="800" height="560" fill="#1A2A41"/>
+    <rect width="800" height="6" y="0" fill="#D4882A"/>
+    <rect width="800" height="6" y="554" fill="#D4882A"/>
+    <rect width="6" height="560" x="0" fill="#D4882A"/>
+    <rect width="6" height="560" x="794" fill="#D4882A"/>
+    <rect x="20" y="20" width="760" height="520" fill="none" stroke="rgba(212,136,42,0.3)" stroke-width="1"/>
+    <text x="400" y="72" text-anchor="middle" font-family="Merriweather,serif" font-size="11" font-weight="700" fill="#D4882A" letter-spacing="4">WAYPORT CONSULTING</text>
+    <text x="400" y="108" text-anchor="middle" font-family="Merriweather,serif" font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="2">CERTIFICATE OF COMPLETION</text>
+    <line x1="160" y1="122" x2="640" y2="122" stroke="#D4882A" stroke-width="1"/>
+    <text x="400" y="168" text-anchor="middle" font-family="Merriweather,serif" font-size="15" fill="rgba(255,255,255,0.6)">This certifies that</text>
+    <text x="400" y="226" text-anchor="middle" font-family="Merriweather,serif" font-size="36" font-weight="bold" fill="#FFFFFF">${studentName}</text>
+    <line x1="200" y1="240" x2="600" y2="240" stroke="rgba(212,136,42,0.5)" stroke-width="1"/>
+    <text x="400" y="278" text-anchor="middle" font-family="Merriweather,serif" font-size="14" fill="rgba(255,255,255,0.6)">has successfully completed</text>
+    <text x="400" y="322" text-anchor="middle" font-family="Merriweather,serif" font-size="24" font-weight="bold" font-style="italic" fill="#D4882A">Building an Unshakeable Organization</text>
+    <text x="400" y="356" text-anchor="middle" font-family="Merriweather,serif" font-size="13" fill="rgba(255,255,255,0.5)">A 6-Module Organizational Health Leadership Course</text>
+    <line x1="160" y1="374" x2="640" y2="374" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="400" y="408" text-anchor="middle" font-family="Merriweather,serif" font-size="12" fill="rgba(255,255,255,0.45)">${date}</text>
+    <text x="270" y="460" text-anchor="middle" font-family="Merriweather,serif" font-size="11" fill="rgba(255,255,255,0.35)">David Weinstein</text>
+    <text x="270" y="476" text-anchor="middle" font-family="Merriweather,serif" font-size="10" fill="rgba(255,255,255,0.25)">Founder, Wayport Consulting</text>
+    <line x1="190" y1="446" x2="350" y2="446" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="400" y="510" text-anchor="middle" font-family="Merriweather,serif" font-size="11" font-style="italic" fill="rgba(212,136,42,0.7)">Clarity Changes Everything.</text>
+  </svg>`;
+
+  const blob = new Blob([svg], {type: 'image/svg+xml'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'Wayport_Certificate_' + studentName.replace(/\s+/g,'_') + '.svg';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 /* ── INIT ── */
 loadState();
 updateProgress();
 // Restore completed lesson checkmarks in sidebar
-Object.keys(state.completed).forEach(id => {
+const completedIds = Object.keys(state.completed || {});
+completedIds.forEach(id => {
   if (state.completed[id]) {
     const sblink = document.getElementById('sblink_' + id);
     if (sblink) sblink.classList.add('done');
   }
 });
 // Show welcome or resume last lesson
-const lastLesson = Object.keys(state.completed).pop();
+const lastLesson = completedIds.length > 0 ? completedIds[completedIds.length - 1] : null;
 if (lastLesson) {
   showLesson(lastLesson);
 } else {
   showWelcome();
 }
 
-/* ── PASSWORD GATE ── */
-const COURSE_PW = 'UnshakeableOrgRI';
-
-function checkPW() {
-  const input = document.getElementById('pw-input');
-  const err   = document.getElementById('pw-err');
-  const gate  = document.getElementById('pw-gate');
-  if (input.value.trim() === COURSE_PW) {
-    gate.classList.add('hidden');
-    sessionStorage.setItem('wc_access', '1');
-    // Focus first interactive element
-    setTimeout(() => document.querySelector('.start-btn') && document.querySelector('.start-btn').focus(), 100);
-  } else {
-    input.classList.add('error');
-    err.classList.add('show');
-    input.focus();
-    input.select();
-  }
-}
-
-// Auto-unlock if already authenticated this session
-if (sessionStorage.getItem('wc_access') === '1') {
-  const gate = document.getElementById('pw-gate');
-  if (gate) gate.classList.add('hidden');
-} else {
-  // Focus password input on load
-  window.addEventListener('load', () => {
-    const inp = document.getElementById('pw-input');
-    if (inp) inp.focus();
-  });
-}
-
+/* Password gate removed: access handled by Cloudflare Access. */
 </script>
+<!-- MODULE CELEBRATION OVERLAY -->
+<div class="module-celebration" id="mod-celebration">
+  <div class="celebration-box">
+    <span class="celebration-emoji" id="cel-emoji">&#127881;</span>
+    <div class="celebration-title" id="cel-title">Module Complete</div>
+    <div class="celebration-divider"></div>
+    <p class="celebration-msg" id="cel-msg">Well done. Keep going.</p>
+    <div>
+      <button class="celebration-next-btn" id="cel-next-btn" onclick="closeCelebration(true)">Continue &rarr;</button>
+      <button class="celebration-close-btn" onclick="closeCelebration(false)">Stay Here</button>
+    </div>
+  </div>
+</div>
+<div class="lesson-wrapper" id="wrap_frameworks">
+<article class="lesson" id="lesson-frameworks">
+  <div class="lesson-module-label">Reference</div>
+  <h1 class="lesson-title">Key Frameworks & Concepts</h1>
+  <div class="lesson-meta"><span>&#128214; Reference Guide</span><span>Return Anytime</span></div>
+  <div class="lesson-body">
+    <p>This page collects the key frameworks, research, and concepts referenced throughout the course. Return to it anytime as a quick reference while working through your 90-day plan.</p>
+
+    <h3>Herzberg's Two-Factor Theory</h3>
+    <p>Psychologist Frederick Herzberg identified two separate sets of factors that drive how people feel about work. <strong>Hygiene Factors</strong>, compensation, job security, working conditions, prevent dissatisfaction when present but do not create engagement. <strong>Motivators</strong>, meaningful work, recognition, real ownership, growth opportunities, are what actually drive engagement and high performance. Getting hygiene factors right removes friction. Only motivators create genuine investment.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> If your entire people strategy is built around compensation and working conditions, you are playing not to lose. Build motivators into every role to play to win.</div>
+
+    <h3>Psychological Safety (Amy Edmondson, Harvard Business School)</h3>
+    <p>Psychological safety is the shared belief that a team is safe for interpersonal risk-taking. When it is present, people speak up, admit mistakes, challenge assumptions, and surface problems early. When it is absent, problems travel upward too late to be acted on. Edmondson's research found that psychological safety was the single strongest predictor of team performance across Google's Project Aristotle.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> Trust is not a soft value. In uncertain times it is a survival mechanism. Organizations with high trust surface problems early enough to solve them. Organizations with low trust surface them late enough to be damaged by them.</div>
+
+    <h3>The Clarity Audit</h3>
+    <p>A quarterly leadership practice developed by Wayport Consulting. Ask each member of your leadership team to independently complete three sentences: "Our most important priority right now is..." "My role in achieving that is..." "I will know we are winning when..." Compare the answers. The alignment or misalignment you see is your organization's clarity health score.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> Clarity is not measured by how many times you have communicated something. It is measured by how consistently your team can act on it, independently, without waiting for you.</div>
+
+    <h3>Decision Rights Framework</h3>
+    <p>A model for assigning authority across an organization. For each significant decision category, define: who can decide independently, who must be consulted before a decision, who must approve, and who should be informed after. When decision rights are unclear, decisions default upward to the leader, creating the bottleneck dynamic that most organizations struggle with.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> Giving someone accountability without authority is asking them to be responsible for outcomes they cannot control. Real ownership requires both.</div>
+
+    <h3>The Task-Switching Tax (Dr. Earl Miller, MIT)</h3>
+    <p>Neuroscientist Dr. Earl Miller's research found that the human brain cannot truly focus on more than one thing at a time. What appears to be multitasking is rapid task-switching that can cost an organization up to 40 percent of its productive capacity. When leaders give their teams five priorities, people do not do five things well. They do five things poorly.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> One priority, clearly named, consistently reinforced, is worth more than five priorities equally weighted. The singular focus is not a limitation. It is a competitive advantage.</div>
+
+    <h3>Playing to Win vs. Playing Not to Lose</h3>
+    <p>A strategic framework originally developed in competitive game theory and applied to organizational strategy. Organizations playing to win make decisions in service of a competitive vision, invest in capability during uncertainty, and trust their people to execute. Organizations playing not to lose make decisions to avoid bad outcomes, contract under pressure, and treat their people as costs to be managed. The difference shows up most clearly in how organizations respond to economic difficulty.</p>
+    <div class="lesson-callout"><strong>The practical implication:</strong> The organizations that emerge from difficult periods stronger than they entered are almost never the ones that cut the deepest. They are the ones that invested with precision while others swung a wrecking ball.</div>
+
+    <h3>The Scarcity Mindset vs. The Abundance Mindset (Carol Dweck)</h3>
+    <p>Psychologist Carol Dweck's research on mindset applies directly to organizational leadership. Leaders operating from a scarcity mindset see resources, talent, and opportunity as fixed and limited, they hoard, protect, and contract. Leaders operating from an abundance mindset see capability as growable, trust as expandable, and difficulty as an opportunity to build something stronger. Scarcity mindset produces wrecking ball decisions. Abundance mindset produces surgical ones.</p>
+
+    <h3>The Five Dimensions of Organizational Health</h3>
+    <p>The organizing framework of this course, developed through Wayport Consulting's work with organizations across sectors. The five dimensions, <strong>Clarity & Direction, Trust & Psychological Safety, Culture & Values, Engagement & Motivation,</strong> and <strong>Leadership Effectiveness</strong>, are not independent. They are interdependent. Weakness in one creates drag in all the others. Strength in all five creates the conditions for an organization that is genuinely difficult to stop.</p>
+    <div class="lesson-insight"><div class="lesson-insight-label">The Core Belief</div><p>Most organizational problems are not people problems. They are systems problems. The leaders who figure that out stop managing symptoms and start building the foundation that makes great performance possible.</p></div>
+  </div>
+  <nav class="lesson-nav">
+    <span></span>
+    <div class="nav-center">
+      <a href="#welcome-screen" onclick="showWelcome()" class="nav-btn nav-btn-prev">&#8592; Back to Welcome</a>
+    </div>
+  </nav>
+</article>
+</div>
 </body>
 </html>
