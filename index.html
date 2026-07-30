@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Building an Unshakeable Organization | Wayport Consulting</title>
+<title>The Unshakeable Organization | Wayport Consulting</title>
 <meta name="description" content="A 6-module leadership course from Wayport Consulting.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,57 +219,7 @@ a { color:inherit; text-decoration:none }
   .sc-form-row { grid-template-columns:1fr }
 }
 
-/* ── PASSWORD GATE ── */
-#pw-gate {
-  position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;
-  background:#1A2A41;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Old Standard TT',serif;
-}
-#pw-gate.hidden { display:none; }
-.pw-box {
-  background:white;border-radius:8px;padding:48px 40px;
-  max-width:440px;width:90%;text-align:center;
-  box-shadow:0 8px 40px rgba(0,0,0,.3);
-}
-.pw-logo-wrap {
-  background:#1A2A41;border-radius:5px;padding:6px 14px;
-  display:inline-flex;align-items:center;height:48px;margin-bottom:24px;
-}
-.pw-logo-wrap img { height:36px;width:auto; }
-.pw-title {
-  font-family:Merriweather,serif;font-size:22px;font-weight:900;
-  color:#1A2A41;margin-bottom:8px;line-height:1.3;
-}
-.pw-subtitle {
-  font-size:14px;color:#666;margin-bottom:28px;line-height:1.6;
-}
-.pw-input {
-  width:100%;padding:13px 16px;border:2px solid #C8D4DE;
-  border-radius:5px;font-family:'Old Standard TT',serif;
-  font-size:15px;color:#1A2A41;outline:none;
-  transition:border-color .2s;margin-bottom:12px;
-  text-align:center;letter-spacing:1px;
-}
-.pw-input:focus { border-color:#1A2A41; }
-.pw-input.error { border-color:#C0392B;background:#FFF5F5; }
-.pw-btn {
-  width:100%;background:#1A2A41;color:white;padding:14px;
-  border-radius:5px;font-family:Nunito,sans-serif;font-size:14px;
-  font-weight:700;text-transform:uppercase;letter-spacing:.5px;
-  border:none;cursor:pointer;transition:background .2s;margin-bottom:10px;
-}
-.pw-btn:hover { background:#253a55; }
-.pw-error {
-  color:#C0392B;font-size:13px;font-family:Nunito,sans-serif;
-  margin-bottom:10px;display:none;
-}
-.pw-error.show { display:block; }
-.pw-help {
-  font-size:12px;color:#999;margin-top:16px;line-height:1.6;
-}
-.pw-help a { color:#D4882A; }
-.pw-divider { width:48px;height:3px;background:#D4882A;border-radius:2px;margin:0 auto 20px; }
+/* Password gate styles removed (access handled by Cloudflare Access) */
 
 
 /* ── REVIEW FORM ── */
@@ -769,9 +719,6 @@ a { color:inherit; text-decoration:none }
   .comp-btn-primary { width:100%; text-align:center; }
   .comp-btn-secondary { width:100%; text-align:center; }
 
-  /* Password gate */
-  .pw-box { padding:32px 20px; }
-  .pw-title { font-size:18px; }
 
   /* Framework reference */
   .lesson-insight { margin:16px 0; }
@@ -897,12 +844,6 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
   .sc-email-form { padding:14px !important; margin-top:8px !important; }
   .sc-email-intro { margin-bottom:10px !important; }
 
-  /* Password gate */
-  .pw-box { padding:24px 18px !important; }
-  .pw-title { font-size:17px !important; margin-bottom:6px !important; }
-  .pw-subtitle { margin-bottom:16px !important; font-size:13px !important; }
-  .pw-logo-wrap { height:40px !important; margin-bottom:16px !important; }
-  .pw-logo-wrap img { height:30px !important; }
 
   /* Celebration */
   .celebration-box { padding:24px 18px !important; }
@@ -950,7 +891,6 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
   .course-main { padding:10px 10px !important; }
   .welcome-title { font-size:20px !important; }
   .lesson-title { font-size:18px !important; }
-  .pw-box { padding:20px 14px !important; }
   .completion-screen { padding:18px 8px !important; }
   .graduate-offer { padding:16px 12px !important; }
   .review-section { padding:14px !important; }
@@ -981,7 +921,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
   <a href="https://wayportconsulting.com/contact" class="wc-header-cta">Let&rsquo;s Talk</a>
 </header>
 <div class="course-banner">
-  <div class="course-banner-title">Building an Unshakeable Organization</div>
+  <div class="course-banner-title">The Unshakeable Organization</div>
   <div class="banner-right">
     <div class="banner-prog-wrap">
       <div class="banner-prog-bar"><div class="banner-prog-fill"></div></div>
@@ -1085,7 +1025,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
   <main class="course-main">
     <div class="welcome-screen" id="welcome-screen">
       <div class="welcome-badge">Wayport Consulting</div>
-      <h1 class="welcome-title">Building an Unshakeable Organization</h1>
+      <h1 class="welcome-title">The Unshakeable Organization</h1>
       <p class="welcome-tagline">A field guide for leaders ready to close the gap between where their organization is and where it is fully capable of going.</p>
       <div class="welcome-stats">
         <div class="wstat"><span class="wstat-num">6</span><span class="wstat-label">Modules</span></div>
@@ -1146,7 +1086,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
       <div class="completion-icon">&#127881;</div>
       <h2 class="completion-title">You Did the Work.</h2>
       <div class="completion-divider"></div>
-      <p class="completion-subtitle">You have completed Building an Unshakeable Organization. What you have built here, the insights, the reflections, the plan, is more valuable than any certificate. Now go use it.</p>
+      <p class="completion-subtitle">You have completed The Unshakeable Organization. What you have built here, the insights, the reflections, the plan, is more valuable than any certificate. Now go use it.</p>
       <div class="completion-actions">
         
         <button onclick="showWelcome()" class="comp-btn-secondary">Review the Course</button>
@@ -1263,7 +1203,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
               <li><strong>Do the action steps.</strong> One action step completed this week is worth ten lessons read and forgotten.</li>
               <li><strong>Share it with your leadership team.</strong> The most powerful use of this course is to take it together and compare your answers. The gaps between your perspectives are the gaps in your organization.</li>
             </ul>
-            <div class="lesson-insight"><div class="lesson-insight-label">A Note From David</div><p>This course is a field guide built from nearly two decades of leading organizations across the Navy, Fortune 50, and entrepreneurship, hundreds of books, and countless hours learning from leaders at every level and across every industry. Nothing in here is original to me alone. The best ideas rarely are. What I have tried to do is distill what actually works, strip away what does not, and give you the clearest possible path to building the organization you already know is possible. Consider this the book I wish someone had handed me twenty years ago.</p></div>
+            <div class="lesson-insight"><div class="lesson-insight-label">A Note From David</div><p>This course is a field guide built from nearly two decades of leading organizations across the Navy, Fortune 500, and entrepreneurship, hundreds of books, and countless hours learning from leaders at every level and across every industry. Nothing in here is original to me alone. The best ideas rarely are. What I have tried to do is distill what actually works, strip away what does not, and give you the clearest possible path to building the organization you already know is possible. Consider this the book I wish someone had handed me twenty years ago.</p></div>
           </div><div class="reflection-box">
           <div class="reflection-header">
             <div class="reflection-icon">&#128172;</div>
@@ -2310,7 +2250,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
             <div class="lesson-insight"><div class="lesson-insight-label">A Final Note From David</div><p>Building an unshakeable organization is not a destination. It is a practice. The leaders who get this right are not the ones who solve it once. They are the ones who keep asking the hard questions, who stay honest about the gap between where they are and where they want to be, and who show up every day willing to do the work.</p><p>That is what this course has been preparing you for. Not a certificate. A practice.</p><p>If you would like to talk through your 90-day plan or explore whether working with Wayport Consulting makes sense for your organization, I would love to have that conversation.</p></div>
           </div>
     <div style="background:#1A2A41;border-radius:8px;padding:22px 24px;margin:28px 0" class="mod-summary-box">
-      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Course Summary: Building an Unshakeable Organization</div>
+      <div style="font-family:Nunito,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D4882A;margin-bottom:10px">Course Summary: The Unshakeable Organization</div>
       <p style="font-family:'Old Standard TT',serif;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0">Clarity gives your team direction. Trust makes honesty safe and surfaces problems early. Culture lived in behavior keeps the right people on the bus. Engagement and real ownership make every person a contributor rather than a passenger. Leadership that builds capability rather than dependency makes the whole stronger than the sum of its parts. These five dimensions are not independent. They are interdependent. Build all five and your organization becomes genuinely difficult to stop.</p>
     </div>
 <div class="reflection-box">
@@ -2457,7 +2397,7 @@ input, textarea, select { font-size:16px !important; } /* Prevent iOS zoom on fo
       </div>
       <div class="footer-col">
         <div class="footer-col-label">This Course</div>
-        <div class="footer-col-text">6 Modules &bull; 13 Lessons</div>
+        <div class="footer-col-text">6 Modules &bull; 14 Lessons</div>
         <div class="footer-col-text">~4 Hours &bull; Lifetime Access</div>
         <a href="https://buy.stripe.com/9B64gA9K3co9f7Abde0Jq00" target="_blank" class="footer-lets-talk" style="background:rgba(255,255,255,.12);color:white;margin-top:8px">Enroll Others &rarr;</a>
       </div>
@@ -2830,7 +2770,7 @@ function exportReflections() {
   const line = '-'.repeat(60);
   let txt = '';
   txt += 'WAYPORT CONSULTING\n';
-  txt += 'Building an Unshakeable Organization\n';
+  txt += 'The Unshakeable Organization\n';
   txt += 'My Reflections & Action Steps\n';
   txt += LINE + '\n';
   txt += 'Exported: ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) + '\n';
@@ -3021,7 +2961,7 @@ function exportWorkPDF() {
   const today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   const metaLine = (nm?esc(nm):'') + (nm&&org?' · ':'') + (org?esc(org):'') + ((nm||org)?' · ':'') + 'Exported ' + today;
 
-  const html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>My Work - Building an Unshakeable Organization</title>'
+  const html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>My Work - The Unshakeable Organization</title>'
     + '<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@400;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">'
     + '<style>'
     + '@page{margin:18mm 16mm}*{box-sizing:border-box}'
@@ -3047,7 +2987,7 @@ function exportWorkPDF() {
     + '@media print{.noprint{display:none}}'
     + '</style></head><body>'
     + '<button class="noprint" onclick="window.print()">Save as PDF</button>'
-    + '<div class="cover"><div class="brand">Wayport Consulting</div><h1>Building an Unshakeable Organization</h1><div class="sub">Your Organizational Health Workbook</div><div class="meta">'+metaLine+'</div></div>'
+    + '<div class="cover"><div class="brand">Wayport Consulting</div><h1>The Unshakeable Organization</h1><div class="sub">Your Organizational Health Workbook</div><div class="meta">'+metaLine+'</div></div>'
     + '<h2>Your Team Health Results</h2>' + scHtml
     + bodyHtml
     + '<div class="ft">Wayport Consulting &middot; david@wayportconsulting.com &middot; 401-824-9757<br>Clarity Changes Everything.</div>'
@@ -3160,7 +3100,7 @@ function savePrecourse() {
 }
 
 /* ── MODULE CELEBRATION ── */
-const CELEBRATIONS = {"clarity-action": {"emoji": "&#128161;", "title": "Module 1 Complete: Clarity & Direction", "msg": "You have named your top priority, defined what winning looks like in key roles, and built a decision filter for your team. Clarity is not the absence of uncertainty. It is the presence of direction despite it. Your team is already more aligned than they were before this module.", "next_id": "trust-intro"}, "trust-building": {"emoji": "&#129309;", "title": "Module 2 Complete: Trust & Psychological Safety", "msg": "You have examined how trust erodes and what it actually costs an organization. Trust is not rebuilt through an offsite. It is rebuilt in the everyday moments when a leader chooses how to respond to honesty. The choices you make this week matter more than any framework.", "next_id": "culture-intro"}, "culture-values": {"emoji": "&#127937;", "title": "Module 3 Complete: Culture & Values", "msg": "Culture is not what you say. It is what you do, what you reward, and what you tolerate. You now have a clear picture of where your stated values and your lived culture align, and where the gap needs closing. Values that live in behavior are the ones that actually hold an organization together.", "next_id": "engagement-intro"}, "engagement-ownership": {"emoji": "&#9889;", "title": "Module 4 Complete: Engagement & Motivation", "msg": "You cannot pay your way to an engaged team. Real ownership requires both accountability and authority. The leaders who close the engagement gap are the ones who stop managing the symptoms in their people and start fixing the systems around them.", "next_id": "leadership-intro"}, "leadership-development": {"emoji": "&#127757;", "title": "Module 5 Complete: Leadership Effectiveness", "msg": "The highest form of leadership is not making great decisions. It is building an organization that makes great decisions without you. You have examined where you are the bottleneck and what it would take to build leaders who build leaders.", "next_id": "synthesis"}, "plan": {"emoji": "&#127881;", "title": "Course Complete: Building an Unshakeable Organization", "msg": "You have done the work. The insights, the reflections, and the 90-day plan you built here are more valuable than any certificate. Now go use them. Your organization is capable. You have the framework to prove it.", "next_id": null}};
+const CELEBRATIONS = {"clarity-action": {"emoji": "&#128161;", "title": "Module 1 Complete: Clarity & Direction", "msg": "You have named your top priority, defined what winning looks like in key roles, and built a decision filter for your team. Clarity is not the absence of uncertainty. It is the presence of direction despite it. Your team is already more aligned than they were before this module.", "next_id": "trust-intro"}, "trust-building": {"emoji": "&#129309;", "title": "Module 2 Complete: Trust & Psychological Safety", "msg": "You have examined how trust erodes and what it actually costs an organization. Trust is not rebuilt through an offsite. It is rebuilt in the everyday moments when a leader chooses how to respond to honesty. The choices you make this week matter more than any framework.", "next_id": "culture-intro"}, "culture-values": {"emoji": "&#127937;", "title": "Module 3 Complete: Culture & Values", "msg": "Culture is not what you say. It is what you do, what you reward, and what you tolerate. You now have a clear picture of where your stated values and your lived culture align, and where the gap needs closing. Values that live in behavior are the ones that actually hold an organization together.", "next_id": "engagement-intro"}, "engagement-ownership": {"emoji": "&#9889;", "title": "Module 4 Complete: Engagement & Motivation", "msg": "You cannot pay your way to an engaged team. Real ownership requires both accountability and authority. The leaders who close the engagement gap are the ones who stop managing the symptoms in their people and start fixing the systems around them.", "next_id": "leadership-intro"}, "leadership-development": {"emoji": "&#127757;", "title": "Module 5 Complete: Leadership Effectiveness", "msg": "The highest form of leadership is not making great decisions. It is building an organization that makes great decisions without you. You have examined where you are the bottleneck and what it would take to build leaders who build leaders.", "next_id": "synthesis"}, "plan": {"emoji": "&#127881;", "title": "Course Complete: The Unshakeable Organization", "msg": "You have done the work. The insights, the reflections, and the 90-day plan you built here are more valuable than any certificate. Now go use them. Your organization is capable. You have the framework to prove it.", "next_id": null}};
 let celNextId = null;
 
 function showCelebration(lessonId) {
@@ -3225,7 +3165,7 @@ function downloadCertificate() {
     <text x="400" y="226" text-anchor="middle" font-family="Merriweather,serif" font-size="36" font-weight="bold" fill="#FFFFFF">${studentName}</text>
     <line x1="200" y1="240" x2="600" y2="240" stroke="rgba(212,136,42,0.5)" stroke-width="1"/>
     <text x="400" y="278" text-anchor="middle" font-family="Merriweather,serif" font-size="14" fill="rgba(255,255,255,0.6)">has successfully completed</text>
-    <text x="400" y="322" text-anchor="middle" font-family="Merriweather,serif" font-size="24" font-weight="bold" font-style="italic" fill="#D4882A">Building an Unshakeable Organization</text>
+    <text x="400" y="322" text-anchor="middle" font-family="Merriweather,serif" font-size="24" font-weight="bold" font-style="italic" fill="#D4882A">The Unshakeable Organization</text>
     <text x="400" y="356" text-anchor="middle" font-family="Merriweather,serif" font-size="13" fill="rgba(255,255,255,0.5)">A 6-Module Organizational Health Leadership Course</text>
     <line x1="160" y1="374" x2="640" y2="374" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
     <text x="400" y="408" text-anchor="middle" font-family="Merriweather,serif" font-size="12" fill="rgba(255,255,255,0.45)">${date}</text>
